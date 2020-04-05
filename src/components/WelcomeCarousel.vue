@@ -2,15 +2,20 @@
     <section class="welcome">
         <div class="carousel">
             <carousel
-                    :autoplay="true"
                     :items="1"
+                    :autoplay="true"
                     :loop="true"
                     :autoHeight="true"
                     :mouseDrag="false"
                     :touchDrag="false"
+                    :nav="false"
+                    :dots="false"
                     animateOut="fadeOut">
                 <div v-for="background in backgrounds" :class="'background ' + background"></div>
             </carousel>
+        </div>
+        <div class="welcome-logo">
+
         </div>
     </section>
 
@@ -33,11 +38,26 @@
 </script>
 
 <style lang="scss" scoped>
-    @import url('../assets/styles/home/welcome-carousel.scss');
+    @use '../assets/styles/home/welcome-carousel.scss';
 
     @for $i from 1 through 4 {
         .background#{$i} {
             background: url("../assets/images/welcome-carousel/foto#{$i}.jpg") no-repeat center;
+        }
+    }
+
+    .welcome-logo {
+        background: url("../assets/images/logos/whiteLogo.svg") no-repeat center;
+        background-size: 50%;
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        /*left: 50vh;*/
+        z-index: 1;
+
+        @media only screen and (max-width: 900px) {
+            background-size: 80%;
         }
     }
 </style>
