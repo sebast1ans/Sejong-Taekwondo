@@ -31,6 +31,9 @@
             return {
                 backgrounds: ["background1", "background2", "background3", "background4"]
             }
+        },
+        methods: {
+
         }
     }
 
