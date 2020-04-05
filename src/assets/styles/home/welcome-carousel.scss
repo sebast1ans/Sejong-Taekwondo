@@ -1,0 +1,20 @@
+.welcome {
+  height: 100vh;
+}
+
+.carousel {
+  height: 100%!important;
+  //position: absolute!important;
+  //top: 0;
+}
+
+.background {
+  filter: brightness(.2);
+  background-size: cover!important;
+  height: 100vh;
+  color: #f0f0f0;
+}
+
+.owl-nav {
+  display: none;
+}
