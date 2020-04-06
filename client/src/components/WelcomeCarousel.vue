@@ -1,19 +1,16 @@
 <template>
     <section class="welcome">
-        <div class="carousel">
-            <carousel
-                    :items="1"
-                    :autoplay="true"
-                    :loop="true"
-                    :autoHeight="true"
-                    :mouseDrag="false"
-                    :touchDrag="false"
-                    :nav="false"
-                    :dots="false"
-                    animateOut="fadeOut">
-                <div v-for="background in backgrounds" :class="'background ' + background"></div>
-            </carousel>
-        </div>
+        <carousel
+                :items="1"
+                :autoplay="true"
+                :loop="true"
+                :mouseDrag="false"
+                :touchDrag="false"
+                :nav="false"
+                :dots="false"
+                animateOut="fadeOut">
+            <div v-for="background in backgrounds" :class="'background ' + background"></div>
+        </carousel>
         <div class="welcome-logo">
 
         </div>
@@ -26,15 +23,13 @@
 
     export default {
         name: 'WelcomeCarousel',
-        components: { carousel },
+        components: {carousel},
         data: () => {
             return {
                 backgrounds: ["background1", "background2", "background3", "background4"]
             }
         },
-        methods: {
-
-        }
+        methods: {}
     }
 
 
