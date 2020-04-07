@@ -1,11 +1,16 @@
-.v-carousel h1 {
-  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.7);
+.who-are-we {
+  .v-carousel h1 {
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.7);
+    font-size: 45px;
+  }
+
+  p {
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.7);
+    font-size: 19px;
+  }
+
+  .v-image__image--cover {
+    filter: brightness(.5)!important;
+  }
 }
 
-p {
-  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.7);
-}
-
-.v-image__image--cover {
-  filter: brightness(.5)!important;
-}

@@ -3,12 +3,26 @@
         <h1>Kdo jsme</h1>
         <div class="accent-line"></div>
 
-        <v-carousel continuous cycle="true" hide-delimiter-background height="500">
-            <v-carousel-item v-for="(item, i) in items" :key="i">
-                <v-img height="100%" :src="item.background" style="{filter: brightness(.5)}">
+        <v-carousel
+                continuous
+                cycle="true"
+                hide-delimiter-background height="500"
+        >
+            <v-carousel-item
+                    v-for="(item, i) in items"
+                    :key="i"
+            >
+                <v-img
+                        height="100%"
+                        :src="item.background"
+                        style="{filter: brightness(.5)}"
+                >
                     <v-container fill-height>
                         <v-row class="text-left">
-                            <h1 class="white--text text-left" :elevation="-25" v-html="item.title"></h1>
+                            <h1 class="white--text text-left"
+                                :elevation="-25"
+                                v-html="item.title"
+                            ></h1>
                             <p class="white--text" v-html="item.text"></p>
                         </v-row>
                     </v-container>
@@ -19,11 +33,8 @@
 </template>
 
 <script>
-    // import carousel from 'vue-owl-carousel'
-
     export default {
         name: 'WhoAreWe',
-        // components: { carousel },
         data() {
             return {
                 items: [

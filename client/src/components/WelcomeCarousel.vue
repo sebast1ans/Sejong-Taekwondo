@@ -23,7 +23,7 @@
 
     export default {
         name: 'WelcomeCarousel',
-        components: {carousel},
+        components: { carousel },
         data: () => {
             return {
                 backgrounds: ["background1", "background2", "background3", "background4"]
