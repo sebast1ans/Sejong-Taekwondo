@@ -5,15 +5,16 @@ $body-font-family: "Open Sans";
 $title-font: "Open Sans";
 
 body {
-  font-family: "Open Sans", sans-serif!important;
+  font-family: "Open Sans", sans-serif !important;
 }
 
 section:nth-of-type(n + 2) {
-  padding: 100px 0 0;
+  margin: 100px 0 0;
 }
 
 .v-application {
   font-family: $body-font-family, sans-serif !important;
+
   .title { // To pin point specific classes of some components
     font-family: $title-font, sans-serif !important;
   }

@@ -6,7 +6,8 @@
             <v-row class="d-flex justify-center">
                 <v-card width="330" class="mt-8 mx-4 mb-4">
                     <v-sheet class="d-flex justify-space-around">
-                            <v-img class="mt-n8 elevation-6" max-width="80%" src="../assets/images/coaches/ondra.jpg"></v-img>
+                        <v-img class="mt-n8 elevation-6" max-width="80%"
+                               src="../assets/images/coaches/ondra.jpg"></v-img>
                     </v-sheet>
                     <v-card-title>Ondřej Havlíček</v-card-title>
                     <v-card-subtitle>6. dan</v-card-subtitle>
@@ -37,11 +38,9 @@
                 </v-card>
             </v-row>
             <v-row class="d-flex justify-center mt-4">
-                <v-card max-width="330" class="my-12 mx-3">
+                <v-card max-width="280" class="my-12 mx-3">
                     <v-sheet class="d-flex justify-space-around">
-                        <v-avatar class="mt-n8 elevation-6" size="120">
-                            <v-img src="../assets/images/coaches/bin.jpg"></v-img>
-                        </v-avatar>
+                        <v-img class="mt-n8 elevation-6" max-width="70%" src="../assets/images/coaches/bin.jpg"></v-img>
                     </v-sheet>
 
                     <v-card-title>slfksf</v-card-title>
@@ -53,11 +52,9 @@
                     </v-card-actions>
                 </v-card>
 
-                <v-card max-width="330" class="my-12 mx-3">
+                <v-card max-width="280" class="my-12 mx-3">
                     <v-sheet class="d-flex justify-space-around">
-                        <v-avatar class="mt-n8 elevation-6" size="120">
-                            <v-img src="../assets/images/coaches/bin.jpg"></v-img>
-                        </v-avatar>
+                        <v-img class="mt-n8 elevation-6" max-width="70%" src="../assets/images/coaches/bin.jpg"></v-img>
                     </v-sheet>
 
                     <v-card-title>slfksf</v-card-title>
@@ -69,11 +66,9 @@
                     </v-card-actions>
                 </v-card>
 
-                <v-card max-width="330" class="my-12 mx-3">
+                <v-card max-width="280" class="my-12 mx-3">
                     <v-sheet class="d-flex justify-space-around">
-                        <v-avatar class="mt-n8 elevation-6" size="120">
-                            <v-img src="../assets/images/coaches/bin.jpg"></v-img>
-                        </v-avatar>
+                        <v-img class="mt-n8 elevation-6" max-width="70%" src="../assets/images/coaches/bin.jpg"></v-img>
                     </v-sheet>
 
                     <v-card-title>slfksf</v-card-title>
@@ -90,9 +85,9 @@
 </template>
 
 <script>
-    export default {
-        name: "Coaches"
-    }
+export default {
+    name: "Coaches"
+}
 </script>
 
 <style scoped>
