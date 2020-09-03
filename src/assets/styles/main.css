@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap");
-body {
-  font-family: "Open Sans", sans-serif !important;
+body, html {
+    font-family: "Open Sans", sans-serif !important;
+    overflow: hidden;
 }
 
 section:nth-of-type(n + 2) {

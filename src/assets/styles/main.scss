@@ -10,8 +10,9 @@ $title-font: "Open Sans";
   transition: $type $duration $timing;
 }
 
-body {
+body, html {
   font-family: "Open Sans", sans-serif !important;
+  overflow: hidden;
 }
 
 section:nth-of-type(n + 2) {

@@ -18,21 +18,21 @@
                         <v-icon>alarm</v-icon>
                     </div>
                     <div class="time">
-                        <h4>Děti 6 – 10 let</h4>
-                        <p>Středa 16.30 – 17.30</p>
-                        <h4>Děti 10 – 15 let</h4>
-                        <p>Úterý a čtvrtek 16.30 – 17.30</p>
-                        <h4>Dospělí</h4>
-                        <p>Úterý a čtvrtek 17.45 – 19.30</p>
+                        <p><strong>Děti 6 – 10 let</strong><br>
+                            Středa 16.30 – 17.30 <br>
+                            <strong>Děti 10 – 15 let</strong><br>
+                            Úterý a čtvrtek 16.30 – 17.30 <br>
+                            <strong>Dospělí</strong><br>
+                            Úterý a čtvrtek 17.45 – 19.30</p>
                     </div>
                     <div class="icon-transport">
                         <v-icon>directions_bus</v-icon>
                     </div>
                     <div class="transport">
-                        <h4>Metro:</h4>
-                        <p>Pankrác (5 min. pěšky</p>
-                        <h4>Bus</h4>
-                        <p>Krčský hřbitov (193, 148)</p>
+                        <p><strong>Metro:</strong><br>
+                            Pankrác (5 min. pěšky <br>
+                            <strong>Bus</strong> <br>
+                            Krčský hřbitov (193, 148)</p>
                     </div>
                     <div class="map">
                         <iframe style="border:0"
@@ -40,7 +40,7 @@
                                 allowfullscreen></iframe>
                     </div>
                 </v-col>
-
+                <!--                <div class="maps-line"></div>-->
                 <!--      Smolkova-->
                 <v-col md class="location">
                     <div class="icon-map">
@@ -55,21 +55,21 @@
                         <v-icon>alarm</v-icon>
                     </div>
                     <div class="time">
-                        <h4>Děti 6 – 10 let</h4>
-                        <p>Středa 16.00 – 17.00</p>
-                        <h4>Děti 10 – 15 let</h4>
-                        <p>Úterý a čtvrtek 16.00 – 17.00</p>
+                        <p><strong>Děti 6 – 10 let</strong><br>
+                            Středa 16.00 – 17.00 <br>
+                            <strong>Děti 10 – 15 let</strong> <br>
+                            Úterý a čtvrtek 16.00 – 17.00</p>
                     </div>
                     <div class="icon-transport">
                         <v-icon>directions_bus</v-icon>
                     </div>
                     <div class="transport">
-                        <h4>Bus</h4>
-                        <p>Sídliště Libuš (165)</p>
-                        <p>Pavlíkova (197, 215)</p>
+                        <strong>Bus</strong>
+                        <p>Sídliště Libuš (165)<br>
+                            Pavlíkova (197, 215)</p>
                     </div>
                     <div class="map">
-                        <iframe width="600" height="450" style="border:0"
+                        <iframe style="border:0"
                                 src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJRbZwgmaRC0cRWzHX5AC9s_c&key=AIzaSyCfR22SLMLB8bq_gRgaAMOWNqVrDEDVlKc"
                                 allowfullscreen></iframe>
                     </div>
