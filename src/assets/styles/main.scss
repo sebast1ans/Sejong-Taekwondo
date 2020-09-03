@@ -4,6 +4,12 @@ $sejongRed: #DA0A16;
 $body-font-family: "Open Sans";
 $title-font: "Open Sans";
 
+@mixin stdTransition($type, $duration, $timing) {
+  -webkit-transition: $type $duration $timing;
+  -moz-transition: $type $duration $timing;
+  transition: $type $duration $timing;
+}
+
 body {
   font-family: "Open Sans", sans-serif !important;
 }
@@ -27,6 +33,19 @@ h1 {
   text-transform: uppercase;
   font-size: 42pt;
   font-weight: 800;
+}
+
+a {
+  color: $sejongRed;
+  @include stdTransition(all, .2s, ease-in-out);
+
+  &:hover,
+  &:visited,
+  &:focus {
+    text-decoration: none;
+    color: darken($sejongRed, 10%)
+  }
+
 }
 
 .accent-line {

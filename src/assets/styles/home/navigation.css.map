@@ -1,10 +1,1 @@
-{
-  "version": 3,
-  "sourceRoot": "",
-  "sources": [
-    "navigation.scss"
-  ],
-  "names": [],
-  "mappings": "AAAQ;AAIR;EACE,aAHmB;EAInB;EACA;EACA;EACA;EACA;EACA;;AAEA;EACE;;AAEA;EACE;;AAEA;EACE;EACA;EACA;EACA;EACA",
-  "file": "navigation.css"
-}
+{"version":3,"sourceRoot":"","sources":["navigation.scss"],"names":[],"mappings":"AAAQ;AAUR;EACE,aATmB;EAUnB;EACA;EACA;EACA;EACA;EACA;;AAEA;EACE;;AAGF;EACE;;AAEA;EACE;EAtBJ;EACA;EACA;;AAuBI;EAEE;EACA;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;;AAEA;EACE;;AAGF;EACE;;AAEA;EACE","file":"navigation.css"}

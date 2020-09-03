@@ -1,42 +1,26 @@
 <template>
     <nav>
         <v-container class="d-flex justify-space-between align-center">
-            <a href="#welcome">
-                <img src="../assets/images/logos/whiteLogo.svg" alt="" height="85">
-            </a>
+            <img src="../assets/images/logos/whiteLogo.svg" alt="" class="nav-logo" height="85"
+                 @click="$vuetify.goTo('#welcome', options)">
             <ul class="nav-items">
-                <li class="nav-item">
-                    <a href="" class="nav-link">Informace</a>
+                <li v-for="navItem in navItems" class="nav-item">
+                    <span class="nav-link" @click="$vuetify.goTo(navItem.target, options)" v-html="navItem.text"></span>
                 </li>
-                <li class="nav-item">
-                    <a href="#who-are-we" class="nav-link">Kdo jsme</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#coaches" class="nav-link">Trenéři</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#what-is-taekwondo" class="nav-link">O Taekwondo</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#locations" class="nav-link">Tréninky</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Kontakt</a>
-                </li>
+
                 <li class="nav-item">
                     <a href="https://www.facebook.com/SejongDojang/" target="_blank" class="nav-link">
-                        <v-icon>mdi-facebook
-                        </v-icon>
+                        <v-icon class="nav-icons">mdi-facebook</v-icon>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="https://www.youtube.com/channel/UCENWwwDVUMEnVamN3ANXB2g" target="_blank" class="nav-link">
-                        <v-icon>mdi-youtube</v-icon>
+                        <v-icon class="nav-icons">mdi-youtube</v-icon>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="https://www.instagram.com/sejong_taekwondo/" target="_blank" class="nav-link">
-                        <v-icon>mdi-instagram</v-icon>
+                        <v-icon class="nav-icons">mdi-instagram</v-icon>
                     </a>
                 </li>
             </ul>
@@ -46,7 +30,28 @@
 
 <script>
 export default {
-    name: "Navigation"
+    name: "Navigation",
+    data() {
+        return {
+            navItems: [
+                {target: '#information', text: 'Informace'},
+                {target: '#who-are-we', text: 'Kdo jsme'},
+                {target: '#coaches', text: 'Trenéři'},
+                {target: '#what-is-taekwondo', text: 'O Taekwondo'},
+                {target: '#locations', text: 'Tréninky'},
+                {target: '#contact', text: 'Kontakt'},
+            ]
+        }
+    },
+
+    computed: {
+        options() {
+            return {
+                duration: 700,
+                easing: 'easeInOutQuart'
+            }
+        }
+    }
 }
 </script>
 

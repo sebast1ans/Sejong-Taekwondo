@@ -10,19 +10,18 @@
         >
             <v-carousel-item
                     v-for="slide in slidesOrdered"
-                    :key="slide.id"
+                    :key="slide.order"
             >
                 <v-img
                         height="100%"
                         :src="require(`@/assets/images/who-are-we-carousel/${slide.background}`)"
-                        style="{filter: brightness(.5)}"
                 >
-                    <v-container fill-height>
-                            <h1 class="white--text text-left"
-                                :elevation="-25"
-                                v-html="slide.title"
-                            ></h1>
-                            <p class="white--text" v-html="slide.text"></p>
+                    <v-container class="text-container">
+                        <h1 class="white--text text-left"
+                            :elevation="-25"
+                            v-html="slide.title"
+                        ></h1>
+                        <p class="white--text" v-html="slide.text"></p>
                     </v-container>
                 </v-img>
             </v-carousel-item>
