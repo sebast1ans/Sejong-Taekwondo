@@ -1,5 +1,5 @@
 <template>
-    <section class="what-is-taekwondo">
+    <section id="what-is-taekwondo">
         <h1>Co je Taekwondo</h1>
         <div class="accent-line"></div>
         <v-row>

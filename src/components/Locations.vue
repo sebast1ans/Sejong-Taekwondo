@@ -1,5 +1,5 @@
 <template>
-    <section class="locations pb-12">
+    <section id="locations" class="pb-12">
         <h1>Kdy a kde trénujeme</h1>
         <div class="accent-line"></div>
         <v-container fluid>

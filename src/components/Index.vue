@@ -1,5 +1,6 @@
 <template>
-    <main>
+    <div>
+        <Navigation/>
         <WelcomeCarousel/>
         <WhoAreWe/>
         <Coaches/>
@@ -8,10 +9,11 @@
         <Locations/>
         <Contact/>
         <Sponsors/>
-    </main>
+    </div>
 </template>
 
 <script>
+import Navigation from "./Navigation";
 import WelcomeCarousel from "./WelcomeCarousel";
 import WhoAreWe from "./WhoAreWe";
 import Coaches from "./Coaches";
@@ -21,9 +23,11 @@ import Locations from "./Locations";
 import Contact from "./Contact";
 import Sponsors from "./Sponsors";
 
+
 export default {
     name: "Index",
     components: {
+        Navigation,
         WhatIsTaekwondo,
         References,
         Coaches,
@@ -32,6 +36,7 @@ export default {
         Locations,
         Contact,
         Sponsors
+
 
     }
 }

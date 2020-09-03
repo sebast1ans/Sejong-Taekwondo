@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+$navbar-font-family: 'Oswald';
+
+nav {
+  font-family: $navbar-font-family;
+  text-transform: uppercase;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  border-bottom: 1px solid fade-out(white, .7);
+  background: rgba(0, 0, 0, .87);
+
+  .nav-items {
+    display: flex;
+
+    .nav-item {
+      list-style-type: none;
+
+      .nav-link {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        padding: .5rem;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}

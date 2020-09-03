@@ -1,5 +1,5 @@
 <template>
-    <section class="welcome">
+    <section id="welcome">
         <carousel
                 :items="1"
                 :autoplay="true"

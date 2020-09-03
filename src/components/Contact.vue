@@ -1,5 +1,5 @@
 <template>
-    <section class="contact">
+    <section id="contact">
         <h1>Kontakt</h1>
         <div class="accent-line"></div>
         <v-container>

@@ -1,5 +1,5 @@
 <template>
-    <section class="who-are-we">
+    <section id="who-are-we">
         <h1>Kdo jsme</h1>
         <div class="accent-line"></div>
 
@@ -17,13 +17,11 @@
                         style="{filter: brightness(.5)}"
                 >
                     <v-container fill-height>
-                        <v-row class="text-left">
                             <h1 class="white--text text-left"
                                 :elevation="-25"
                                 v-html="slide.title"
                             ></h1>
                             <p class="white--text" v-html="slide.text"></p>
-                        </v-row>
                     </v-container>
                 </v-img>
             </v-carousel-item>
@@ -32,7 +30,7 @@
 </template>
 
 <script>
-import db from "@/firebase/init";
+import db from "../firebase/init";
 
 export default {
     name: 'WhoAreWe',

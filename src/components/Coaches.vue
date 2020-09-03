@@ -1,5 +1,5 @@
 <template>
-    <section class="coaches">
+    <section id="coaches">
         <h1>Trenéři</h1>
         <div class="accent-line"></div>
         <v-container>
