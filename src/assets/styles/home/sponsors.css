@@ -1,0 +1,14 @@
+footer {
+    color: #bbb;
+    background-color: #777;
+}
+
+footer .sponsor {
+    width: 7em;
+}
+
+footer .footer-logo {
+    height: 50px;
+}
+
+/*# sourceMappingURL=sponsors.css.map */

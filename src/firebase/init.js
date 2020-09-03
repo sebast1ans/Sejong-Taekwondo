@@ -1,0 +1,19 @@
+import firebase from 'firebase'
+import firestore from 'firebase/firestore'
+
+var firebaseConfig = {
+    apiKey: "AIzaSyCUX8y9yDt2P8l_qMXstVycf1Jm1BFai9A",
+    authDomain: "sejong-web.firebaseapp.com",
+    databaseURL: "https://sejong-web.firebaseio.com",
+    projectId: "sejong-web",
+    storageBucket: "sejong-web.appspot.com",
+    messagingSenderId: "698109956681",
+    appId: "1:698109956681:web:95819f34447573d3e46598",
+    measurementId: "G-FQL4RK97ZK"
+};
+
+// Initialize Firebase
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
+export default firebaseApp.firestore()

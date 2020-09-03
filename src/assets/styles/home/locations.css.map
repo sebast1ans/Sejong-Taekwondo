@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "sourceRoot": "",
+  "sources": [
+    "locations.scss"
+  ],
+  "names": [],
+  "mappings": "AAGE;EACE;;AAGF;EACE;;AAGF;EACE;;AAGF;EACE;;AAGF;EACE;;AAGF;EACE;;AAGF;EACE;;AAGF;EACE;;AAGF;EACE;EACA;EACA;EACA;EACA,qBACM;;AAIN;EACE;EACA;;AAGF;EACE;EACA;;AAGF;EACE;EACA",
+  "file": "locations.css"
+}
