@@ -10,6 +10,7 @@
         >
             <v-carousel-item
                     v-for="slide in slidesOrdered"
+                    :key="slide.id"
             >
                 <v-img
                         height="100%"
