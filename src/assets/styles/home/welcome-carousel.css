@@ -1,0 +1,12 @@
+#welcome {
+    height: 100vh;
+}
+
+#welcome .background {
+    filter: brightness(0.2);
+    background-size: cover !important;
+    height: 100vh;
+    color: #f0f0f0;
+}
+
+/*# sourceMappingURL=welcome-carousel.css.map */
