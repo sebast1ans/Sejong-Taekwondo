@@ -10,7 +10,7 @@
                     md="3"
                     class="pa-0"
             >
-                <v-img :src=imgLink.src></v-img>
+                <v-img :src="require(`@/assets/images/what-is-taekwondo/${imgLink.src}`)"></v-img>
             </v-col>
         </v-row>
 
@@ -25,16 +25,16 @@ export default {
         return {
             imgLinks: [
                 {
-                    src: require("../assets/images/what-is-taekwondo/foto1.jpg")
+                    src: 'foto1.jpg'
                 },
                 {
-                    src: require("../assets/images/what-is-taekwondo/foto2.jpg")
+                    src: 'foto2.jpg'
                 },
                 {
-                    src: require("../assets/images/what-is-taekwondo/foto3.jpg")
+                    src: 'foto3.jpg'
                 },
                 {
-                    src: require("../assets/images/what-is-taekwondo/foto4.jpg")
+                    src: 'foto4.jpg'
                 }
             ]
         }

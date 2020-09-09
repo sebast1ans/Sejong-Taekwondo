@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap");
 nav {
   font-family: "Oswald";
   text-transform: uppercase;
@@ -28,7 +28,7 @@ nav .nav-items .nav-item .nav-link {
   cursor: pointer;
   color: #fff;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
   padding: 0.5rem;
   letter-spacing: 1px;
 }
@@ -40,6 +40,11 @@ nav .nav-items .nav-item .nav-link .nav-icons {
 }
 nav .nav-items .nav-item .nav-link .nav-icons:hover {
   color: #ccc;
+}
+nav .nav-items .is-active {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
 }
 
 /*# sourceMappingURL=navigation.css.map */

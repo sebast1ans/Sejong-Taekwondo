@@ -2,8 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import vuetify from './plugins/vuetify'
+import VueScrollactive from 'vue-scrollactive';
 import 'material-design-icons/iconfont/material-icons.css'
 
+Vue.use(VueScrollactive);
 Vue.config.productionTip = false;
 
 new Vue({

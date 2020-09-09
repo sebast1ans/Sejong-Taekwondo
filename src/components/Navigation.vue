@@ -1,36 +1,42 @@
 <template>
     <nav>
-        <v-container class="d-flex justify-space-between align-center">
-            <img src="../assets/images/logos/whiteLogo.svg" alt="" class="nav-logo" height="85"
-                 @click="$vuetify.goTo('#welcome', options)">
-            <ul class="nav-items">
-                <li v-for="navItem in navItems" class="nav-item">
-                    <span class="nav-link" @click="$vuetify.goTo(navItem.target, options)" v-html="navItem.text"></span>
-                </li>
+        <scrollactive :duration="850" bezier-easing-value=".66,0,.33,1" :modify-url=false>
+            <v-container class="d-flex justify-space-between align-center">
+                <img src="../assets/images/logos/whiteLogo.svg" alt="" class="nav-logo" height="85"
+                     @click="$vuetify.goTo('#welcome', options)">
 
-                <li class="nav-item">
-                    <a href="https://www.facebook.com/SejongDojang/" target="_blank" class="nav-link">
-                        <v-icon class="nav-icons">mdi-facebook</v-icon>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="https://www.youtube.com/channel/UCENWwwDVUMEnVamN3ANXB2g" target="_blank" class="nav-link">
-                        <v-icon class="nav-icons">mdi-youtube</v-icon>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="https://www.instagram.com/sejong_taekwondo/" target="_blank" class="nav-link">
-                        <v-icon class="nav-icons">mdi-instagram</v-icon>
-                    </a>
-                </li>
-            </ul>
-        </v-container>
+                <ul class="nav-items">
+                    <li v-for="navItem in navItems" class="nav-item">
+                        <a class="nav-link scrollactive-item" :href="navItem.target" v-html="navItem.text"></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="https://www.facebook.com/SejongDojang/" target="_blank" class="nav-link">
+                            <v-icon class="nav-icons">mdi-facebook</v-icon>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://www.youtube.com/channel/UCENWwwDVUMEnVamN3ANXB2g" target="_blank"
+                           class="nav-link">
+                            <v-icon class="nav-icons">mdi-youtube</v-icon>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://www.instagram.com/sejong_taekwondo/" target="_blank" class="nav-link">
+                            <v-icon class="nav-icons">mdi-instagram</v-icon>
+                        </a>
+                    </li>
+                </ul>
+            </v-container>
+        </scrollactive>
     </nav>
 </template>
 
 <script>
+
 export default {
     name: "Navigation",
+
     data() {
         return {
             navItems: [
