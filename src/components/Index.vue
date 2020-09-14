@@ -36,12 +36,11 @@ export default {
         Locations,
         Contact,
         Sponsors
-
-
-    }
+    },
 }
 </script>
 
 <style lang="scss">
 @use '../assets/styles/main';
+
 </style>
