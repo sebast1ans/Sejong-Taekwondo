@@ -1,0 +1,57 @@
+#contact a {
+  color: #DA0A16 !important;
+  text-decoration: none;
+}
+#contact form {
+  display: flex;
+  flex-direction: column;
+}
+#contact form input, #contact form textarea {
+  border: 1px solid #333;
+  margin: 0.5em 0;
+  padding: 1.5em;
+  font-weight: 200;
+  font-size: 0.8em;
+  resize: none;
+}
+#contact form input:focus, #contact form textarea:focus {
+  outline-color: #DA0A16;
+}
+#contact form input[type=submit] {
+  align-self: flex-start;
+  border: 2px solid black;
+  padding: 1em 4em;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: transparent;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+#contact form input[type=submit]:hover {
+  cursor: pointer;
+  border-color: #DA0A16;
+  background-color: #DA0A16;
+  color: #ffffff;
+}
+#contact .social-icons {
+  width: 30%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+#contact .social-icons .contact-icon {
+  font-size: 42px;
+  color: #212529;
+}
+#contact .social-icons .contact-icon-fb:hover {
+  color: #4267b2;
+}
+#contact .social-icons .contact-icon-yt:hover {
+  color: red;
+}
+#contact .social-icons .contact-icon-ig:hover {
+  color: #da2b73;
+}
+
+/*# sourceMappingURL=contact.css.map */

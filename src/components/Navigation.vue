@@ -47,7 +47,9 @@ export default {
             ]
         }
     },
-    methods: {},
+    methods: {
+
+    },
     computed: {
         options() {
             return {
@@ -55,7 +57,7 @@ export default {
                 easing: 'easeInOutQuart'
             }
         }
-    },
+    }
 
 }
 </script>
