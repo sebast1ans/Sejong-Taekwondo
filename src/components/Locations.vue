@@ -58,7 +58,10 @@
                         <p><strong>Děti 6 – 10 let</strong><br>
                             Středa 16.00 – 17.00 <br>
                             <strong>Děti 10 – 15 let</strong> <br>
-                            Úterý a čtvrtek 16.00 – 17.00</p>
+                            Úterý a čtvrtek 16.00 – 17.00 <br>
+                            <strong>Dospělí začátečníci</strong><br>
+                            Středa 18.30 – 20.00
+                        </p>
                     </div>
                     <div class="icon-transport">
                         <v-icon>directions_bus</v-icon>

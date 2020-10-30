@@ -4,7 +4,7 @@
         <WelcomeCarousel/>
         <WhoAreWe/>
         <Coaches/>
-        <References/>
+<!--        <References/>-->
         <WhatIsTaekwondo/>
         <Locations/>
         <Contact/>

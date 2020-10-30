@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
 
+@font-face {
+  font-family: Akrobat-Black;
+  src: url("../assets/fonts/Akrobat/TTF/Akrobat-Black.ttf");
+}
+
 $sejongRed: #DA0A16;
 $body-font-family: "Open Sans";
 $title-font: "Open Sans";
@@ -11,7 +16,7 @@ $title-font: "Open Sans";
 }
 
 body, html {
-  font-family: "Open Sans", sans-serif !important;
+  //font-family: "Open Sans", sans-serif !important;
   overflow: hidden;
 }
 

@@ -63,28 +63,10 @@ nav {
     }
   }
 
-  //@media(min-width: 992px) {
-  //  padding-top: 17px;
-  //  padding-bottom: 17px;
-  //  -webkit-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
-  //  -moz-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
-  //  transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
-  //  letter-spacing: 1px;
-  //  border-bottom: none;
-  //  background: transparent;
-  //
-  //  &.navbar-shrink {
-  //    padding-top: 0;
-  //    padding-bottom: 0;
-  //
-  //    border-bottom: 1px solid fade-out(white, .7);
-  //    background: rgba(0, 0, 0, .87);
-  //  }
-  //
-  //  .nav-link.active {
-  //    outline: none;
-  //    background-color: rgba(255, 255, 255, .3);
-  //    border-radius: 2px;
-  //  }
-  //}
+  @media(max-width: 992px) {
+    .nav-items {
+      display: none;
+    }
+
+  }
 }
