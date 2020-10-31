@@ -1,0 +1,36 @@
+.discipline {
+  position: relative;
+  cursor: pointer;
+}
+.discipline .discipline-top-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.discipline .discipline-top-layer .discipline-text {
+  font-family: "Akrobat-Black", "Open Sans", sans-serif;
+  color: #ffffff;
+  font-size: 24pt;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.7);
+}
+.discipline .discipline-top-layer:hover {
+  opacity: 1;
+}
+.discipline .discipline-img {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.discipline:hover .discipline-img {
+  filter: brightness(0.37) grayscale(1);
+}
+
+/*# sourceMappingURL=what-is-taekwondo.css.map */
