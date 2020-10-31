@@ -21,7 +21,7 @@
                             </template>
                             <v-card>
                                 <v-card-title class="d-flex justify-space-between">
-                                    <strong>{{ coach.name }}</strong>
+                                    {{ coach.name }}
                                     <v-btn icon @click="coach.dialog = false">
                                         <v-icon>close</v-icon>
                                     </v-btn>
@@ -57,7 +57,7 @@
                             </template>
                             <v-card>
                                 <v-card-title class="d-flex justify-space-between">
-                                    <strong>{{ asistentCoach.name }}</strong>
+                                    {{ asistentCoach.name }}
                                     <v-btn icon @click="asistentCoach.dialog = false">
                                         <v-icon>close</v-icon>
                                     </v-btn>
