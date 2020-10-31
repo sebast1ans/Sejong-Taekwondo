@@ -5,8 +5,10 @@ nav {
   position: fixed;
   width: 100%;
   z-index: 99;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(0, 0, 0, 0.87);
+  padding: 1.1em 0 1.1em 0;
+  -webkit-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
+  -moz-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
+  transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
 }
 nav .nav-logo {
   cursor: pointer;
@@ -46,10 +48,17 @@ nav .nav-items .is-active {
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 2px;
 }
+
 @media (max-width: 992px) {
   nav .nav-items {
     display: none;
   }
+}
+
+.navShrink {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.87);
+  padding: 0;
 }
 
 /*# sourceMappingURL=navigation.css.map */
