@@ -27,7 +27,7 @@ export default {
 
 <style lang="scss" scoped>
 a {
-  color: #DA0A16;
+  color: #DA0A16 !important;
   text-decoration: none;
 }
 </style>
