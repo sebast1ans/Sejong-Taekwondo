@@ -30,8 +30,6 @@
                         <v-card-text v-html="discipline.content"></v-card-text>
                     </v-card>
                 </v-dialog>
-
-
             </v-col>
         </v-row>
 
@@ -90,7 +88,7 @@ export default {
                                             <strong>Sebeovládání</strong> 극기 [Kuk-ki] <br>
                                             <strong>Nezlomný duch</strong> 백절불굴 [Pëkčol-pulgul]
                                         </p>
-                                        <img src=${require("@/assets/images/what-is-taekwondo/content/jongshin.jpg")} alt="jonghsin" style="display: block; margin: auto;">
+                                        <img src=${require("@/assets/images/what-is-taekwondo/content/jongshin.jpg")} alt="jonghsin" style="width: 100%; margin: auto"">
                     `,
                     dialog: false
                 },

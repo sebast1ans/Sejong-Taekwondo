@@ -6,16 +6,24 @@
     text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.7);
     font-size: 19px;
 }
-
 #who-are-we .v-image__image--cover {
     filter: brightness(0.5) !important;
 }
-
 #who-are-we .text-container {
     display: flex;
     height: 100%;
     flex-direction: column;
     justify-content: center;
+}
+
+@media (max-width: 992px) {
+    #who-are-we .v-carousel h1 {
+        font-size: 40px;
+    }
+
+    #who-are-we p {
+        font-size: 15px;
+    }
 }
 
 /*# sourceMappingURL=who-are-we-carousel.css.map */

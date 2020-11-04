@@ -11,13 +11,13 @@
                     <strong>ČUS evidence: </strong>3107729 <br>
                     <strong>Bankovní spojení (ČSOB):</strong> 154282135/0300 <br>
                     <br>
-                    <v-icon>contacts</v-icon>
+                    <v-icon color="black">contacts</v-icon>
                     <strong> Mgr. Ondřej Havlíček</strong><br>
                     <strong>Telefon: </strong> 604 541 100<br>
                     <strong>E-mail: </strong> <a href="mailto:ondra@sejong.cz" target="_top">ondra@sejong.cz</a>
                     <br>
                     <br>
-                    <v-icon>contacts</v-icon>
+                    <v-icon color="bla">contacts</v-icon>
                     <strong>Bc. Phuong Nhung Havlíčková</strong><br>
                     <strong>Telefon (Tiếng Việt):</strong> 774 545 777 <br>
                     <strong>E-mail: </strong><a href="mailto:hoang.pnhung@gmail.com"
@@ -38,14 +38,14 @@
 
 
                 </v-col>
-                <v-col>
-                    <form action="">
-                        <input type="text" name="name" placeholder="Vaše jméno">
-                        <input type="email" name="email" placeholder="Váš e-mail">
-                        <textarea name="text" cols="80" rows="8" placeholder="Zpráva..."></textarea>
-                        <input type="submit" value="Odeslat">
-                    </form>
-                </v-col>
+                <!--                <v-col>-->
+                <!--                    <form action="">-->
+                <!--                        <input type="text" name="name" placeholder="Vaše jméno">-->
+                <!--                        <input type="email" name="email" placeholder="Váš e-mail">-->
+                <!--                        <textarea name="text" cols="80" rows="8" placeholder="Zpráva..."></textarea>-->
+                <!--                        <input type="submit" value="Odeslat">-->
+                <!--                    </form>-->
+                <!--                </v-col>-->
             </v-row>
         </v-container>
 

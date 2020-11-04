@@ -2,6 +2,7 @@
   .v-carousel h1 {
     text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.7);
     font-size: 45px;
+
   }
 
   p {
@@ -18,6 +19,16 @@
     height: 100%;
     flex-direction: column;
     justify-content: center;
+  }
+
+  @media(max-width: 992px) {
+    .v-carousel h1 {
+      font-size: 40px;
+    }
+
+    p {
+      font-size: 15px;
+    }
   }
 }
 

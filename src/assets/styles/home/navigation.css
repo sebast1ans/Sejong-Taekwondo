@@ -1,64 +1,102 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap");
 nav {
-  font-family: "Oswald";
-  text-transform: uppercase;
-  position: fixed;
-  width: 100%;
-  z-index: 99;
-  padding: 1.1em 0 1.1em 0;
-  -webkit-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
-  -moz-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
-  transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
+    font-family: "Oswald";
+    text-transform: uppercase;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    padding: 1.1em 0 1.1em 0;
+    -webkit-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
+    -moz-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
+    transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
 }
-nav .nav-logo {
-  cursor: pointer;
+
+nav .nav-elements {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-nav .nav-items {
-  display: flex;
+
+nav .nav-elements .nav-logo {
+    cursor: pointer;
 }
-nav .nav-items .nav-item {
-  list-style-type: none;
-  -webkit-transition: background 0.3s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out;
-  transition: background 0.3s ease-in-out;
+
+nav .nav-elements .menu-toggle {
+    display: none;
 }
-nav .nav-items .nav-item:active, nav .nav-items .nav-item:focus {
-  outline: none;
-  background-color: transparent;
+
+nav .nav-elements .nav-items {
+    display: flex;
 }
-nav .nav-items .nav-item .nav-link {
-  cursor: pointer;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.5rem;
-  letter-spacing: 1px;
+
+nav .nav-elements .nav-items .nav-item {
+    list-style-type: none;
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;
 }
-nav .nav-items .nav-item .nav-link:hover {
-  color: #ccc;
+
+nav .nav-elements .nav-items .nav-item:active, nav .nav-elements .nav-items .nav-item:focus {
+    outline: none;
+    background-color: transparent;
 }
-nav .nav-items .nav-item .nav-link .nav-icons {
-  color: #fff;
+
+nav .nav-elements .nav-items .nav-item .nav-link {
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem;
 }
-nav .nav-items .nav-item .nav-link .nav-icons:hover {
-  color: #ccc;
+
+nav .nav-elements .nav-items .nav-item .nav-link:hover {
+    color: #ccc;
 }
-nav .nav-items .is-active {
-  outline: none;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 2px;
+
+nav .nav-elements .nav-items .nav-item .nav-link .nav-icons {
+    color: #fff;
+}
+
+nav .nav-elements .nav-items .nav-item .nav-link .nav-icons:hover {
+    color: #ccc;
+}
+
+nav .nav-elements .nav-items .is-active {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
 }
 
 @media (max-width: 992px) {
-  nav .nav-items {
-    display: none;
-  }
+    nav .nav-elements {
+        flex-direction: column;
+        align-items: normal;
+    }
+
+    nav .nav-elements .menu-toggle {
+        display: block;
+    }
+
+    nav .nav-elements .active {
+        display: flex !important;
+        padding-bottom: 1.5em;
+    }
+
+    nav .nav-elements .nav-items {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav .nav-elements .nav-items .nav-item {
+        padding-top: 0.8rem;
+    }
 }
 
-.navShrink {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(0, 0, 0, 0.87);
-  padding: 0;
+.nav-shrink {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.87);
+    padding: 0;
 }
 
 /*# sourceMappingURL=navigation.css.map */
