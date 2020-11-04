@@ -17,7 +17,7 @@
                     <strong>E-mail: </strong> <a href="mailto:ondra@sejong.cz" target="_top">ondra@sejong.cz</a>
                     <br>
                     <br>
-                    <v-icon color="bla">contacts</v-icon>
+                    <v-icon color="black">contacts</v-icon>
                     <strong>Bc. Phuong Nhung Havlíčková</strong><br>
                     <strong>Telefon (Tiếng Việt):</strong> 774 545 777 <br>
                     <strong>E-mail: </strong><a href="mailto:hoang.pnhung@gmail.com"
