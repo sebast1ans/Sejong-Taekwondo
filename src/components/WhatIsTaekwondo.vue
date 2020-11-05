@@ -76,17 +76,17 @@ export default {
                                             duševní skromnosti.</p>
                                         <p class="text-center"><strong>5 zásad taekwondo</strong></p>
                                         <p>Taekwondo je bojové umění, které vyžaduje i přísnou disciplínu. Proto by jeho
-                                            pět zásad (tchäkwondo čongšin) měl každý, kdo se věnuje taekwondo, nejenom
+                                            pět zásad (taekwondo jeongsin) měl každý, kdo se věnuje taekwondo, nejenom
                                             znát, ale měl by i chápat jejich skutečný význam. Každý cvičenec taekwondo
                                             by se měl zásadami taekwondo řídit nejenom v tělocvične, ale i v běžném
                                             životě.
                                         </p>
                                         <p class="text-center">
-                                            <strong>Zdvořilost</strong> 예의 [Je-i] <br>
-                                            <strong>Čestnost</strong> 염치 [Jom-čchi] <br>
-                                            <strong>Vytrvalost</strong> 인내 [In-ne] <br>
-                                            <strong>Sebeovládání</strong> 극기 [Kuk-ki] <br>
-                                            <strong>Nezlomný duch</strong> 백절불굴 [Pëkčol-pulgul]
+                                            <strong>Zdvořilost</strong> 예의 [ye-hwi] <br>
+                                            <strong>Čestnost</strong> 염치 [yeom-chi] <br>
+                                            <strong>Vytrvalost</strong> 인내 [in-nae] <br>
+                                            <strong>Sebeovládání</strong> 극기 [geuk-gi] <br>
+                                            <strong>Nezlomný duch</strong> 백절불굴 [baekjeol-bulgul]
                                         </p>
                                         <img src=${require("@/assets/images/what-is-taekwondo/content/jongshin.jpg")} alt="jonghsin" style="width: 100%; margin: auto"">
                     `,
