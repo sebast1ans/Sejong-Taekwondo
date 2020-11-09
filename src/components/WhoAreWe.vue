@@ -6,7 +6,10 @@
         <v-carousel
                 continuous
                 cycle
-                hide-delimiter-background height="600"
+                hide-delimiter-background
+                height="600"
+                :interval="15000"
+                :show-arrows="false"
         >
             <v-carousel-item
                     v-for="slide in slidesOrdered"

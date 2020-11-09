@@ -11,6 +11,11 @@
                     <strong>ČUS evidence: </strong>3107729 <br>
                     <strong>Bankovní spojení (ČSOB):</strong> 154282135/0300 <br>
                     <br>
+                    <v-btn outlined color="#DA0A16" @click="$vuetify.goTo('#locations')">Kdy a kde trénujeme
+                        <v-icon>arrow_upward</v-icon>
+                    </v-btn>
+                    <br>
+                    <br>
                     <v-icon color="black">contacts</v-icon>
                     <strong> Mgr. Ondřej Havlíček</strong><br>
                     <strong>Telefon: </strong> 604 541 100<br>
