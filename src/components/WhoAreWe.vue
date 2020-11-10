@@ -43,7 +43,7 @@ export default {
         }
     },
     computed: {
-        slidesOrdered: function () {
+        slidesOrdered() {
             return this.slides.sort((a, b) => a.order - b.order)
         }
     },
