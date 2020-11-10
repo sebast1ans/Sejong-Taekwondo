@@ -2,7 +2,7 @@
     <div>
         <Navigation/>
         <WelcomeCarousel/>
-        <Announcement/>
+<!--        <Announcement/>-->
         <News/>
         <WhoAreWe/>
         <Coaches/>
