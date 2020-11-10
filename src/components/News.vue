@@ -11,7 +11,7 @@
                                     <v-card-title>{{ article.title }}</v-card-title>
                                     <v-card-subtitle>{{ article.date }}</v-card-subtitle>
                                     <v-card-text>{{ article.content }}</v-card-text>
-                                    <v-card-actions><v-btn text color="#DA0A16">Celý článek</v-btn></v-card-text></v-card-actions>
+                                    <v-card-actions><v-btn text color="#DA0A16">Celý článek</v-btn></v-card-actions>
                                 </v-card>
                             </v-col>
 <!--                            <v-btn text color="#DA0A16" class="all-news"><strong>Všechny novinky</strong></v-btn>-->
