@@ -96,10 +96,7 @@ export default {
                     name: "Poomsae",
                     imgSrc: 'foto2.jpg',
                     content: `<br>
-                     <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%">
-                        <iframe width="854" height="480" src="https://www.youtube.com/embed/9MsDHJjCBOw?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0" frameborder="0" style="position:absolute; top: 0; left: 0; width: 100%; height: 100%;" allow="autoplay; encrypted-media" allowfullscreen>
-                        </iframe>
-                     </div>
+                                  <video id="poomsae-vid" width="100%" controls src="${require('@/assets/videos/poomsae.mp4')}"></video>
                                         <br>
                                         <p>Poomsae (souborná cvičení) jsou závazná cvičení, vypracovaná mistry
                                             Taekwondo,
@@ -138,9 +135,8 @@ export default {
                     name: "Kyorugi",
                     imgSrc: 'foto3.jpg',
                     content: `<br>
-                    <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%">
-                                            <iframe src="https://www.youtube.com/embed/G2oREJ3uydY?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0" frameborder="0" style="position:absolute; top: 0; left: 0; width: 100%; height: 100%;" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                                        </div>
+
+                                        <video id="kyorugi-vid" width="100%" controls src="${require('@/assets/videos/kyorugi.mp4')}"></video>
                                         <br>
                                         <p>Kyorugi (zápas) se dělí na zápas <strong>řízený</strong> a
                                             <strong>volný</strong>.</p>
@@ -178,7 +174,7 @@ export default {
                     name: "Kyokpa",
                     imgSrc: 'foto4.jpg',
                     content: `
-                    <img src=${require("@/assets/images/what-is-taekwondo/content/kyokpa1.jpg")}
+                    <br><img src=${require("@/assets/images/what-is-taekwondo/content/kyokpa1.jpg")}
                                              style="display: inline-block; width: 35%; float: right; margin-left: 1em"
                                               alt="kyokpa">
                                         <p>Kyokpa (přerážecí techniky) se dělí na <strong>silové přerážení</strong>,
@@ -196,6 +192,9 @@ export default {
                 }
             ]
         }
+    },
+
+    methods: {
     }
 }
 </script>
