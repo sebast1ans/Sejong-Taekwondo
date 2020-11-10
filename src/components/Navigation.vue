@@ -47,7 +47,7 @@ export default {
     data() {
         return {
             navItems: [
-                // {target: '#information', text: 'Informace'},
+                {target: '#news', text: 'Novinky'},
                 {target: '#who-are-we', text: 'Kdo jsme'},
                 {target: '#coaches', text: 'Trenéři'},
                 {target: '#what-is-taekwondo', text: 'O Taekwondo'},
