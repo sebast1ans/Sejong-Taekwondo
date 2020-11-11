@@ -4,7 +4,7 @@
         <v-container class="nav-elements">
 
             <div class="nav-mobile d-flex justify-space-around align-center">
-                <img src="../assets/images/logos/whiteLogo.svg" alt="" class="nav-logo" height="85"
+                <img src="@/assets/images/logos/whiteLogo.svg" alt="" class="nav-logo" height="85"
                      @click="$vuetify.goTo('#welcome')">
                 <v-btn class="menu-toggle" outlined fab color="white" @click="navReveal = !navReveal">
                     <v-icon color="white">menu</v-icon>
@@ -83,5 +83,5 @@ export default {
 </script>
 
 <style lang="scss">
-@use '../assets/styles/home/navigation';
+@use '~@/assets/styles/home/navigation';
 </style>

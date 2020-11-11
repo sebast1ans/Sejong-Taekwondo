@@ -89,5 +89,5 @@ export default {
 </script>
 
 <style lang="scss">
-@use '../assets/styles/home/locations';
+@use '~@/assets/styles/home/locations';
 </style>

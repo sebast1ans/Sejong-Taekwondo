@@ -36,16 +36,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@use '../assets/styles/home/welcome-carousel.scss';
+@use '~@/assets/styles/home/welcome-carousel.scss';
 
 @for $i from 1 through 4 {
   .background#{$i} {
-    background: url("../assets/images/welcome-carousel/foto#{$i}.jpg") no-repeat center;
+    background: url("~@/assets/images/welcome-carousel/foto#{$i}.jpg") no-repeat center;
   }
 }
 
 .welcome-logo {
-  background: url("../assets/images/logos/whiteLogo.svg") no-repeat center;
+  background: url("~@/assets/images/logos/whiteLogo.svg") no-repeat center;
   background-size: 50%;
   height: 100vh;
   width: 100vw;

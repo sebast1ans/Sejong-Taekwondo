@@ -14,7 +14,7 @@
                         </v-card-text>
                         <v-sheet>
                             <v-avatar class="mb-n10 ml-5 elevation-6" height="88px" width="88px">
-                                <v-img src="../assets/images/coaches/duy.jpg"></v-img>
+                                <v-img src="@/assets/images/coaches/duy.jpg"></v-img>
                             </v-avatar>
                         </v-sheet>
                     </v-card>
@@ -29,7 +29,7 @@
                         </v-card-text>
                         <v-sheet>
                             <v-avatar class="mb-n10 ml-5 elevation-6" height="88px" width="88px">
-                                <v-img src="../assets/images/coaches/bin.jpg"></v-img>
+                                <v-img src="@/assets/images/coaches/bin.jpg"></v-img>
                             </v-avatar>
                         </v-sheet>
                     </v-card>
@@ -44,7 +44,7 @@
                         </v-card-text>
                         <v-sheet>
                             <v-avatar class="mb-n10 ml-5 elevation-6" height="88px" width="88px">
-                                <v-img src="../assets/images/coaches/malydat.jpg"></v-img>
+                                <v-img src="@/assets/images/coaches/malydat.jpg"></v-img>
                             </v-avatar>
                         </v-sheet>
                     </v-card>

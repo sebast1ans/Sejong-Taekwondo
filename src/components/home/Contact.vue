@@ -65,5 +65,5 @@ export default {
 </script>
 
 <style lang="scss">
-@use '../assets/styles/home/contact';
+@use '~@/assets/styles/home/contact';
 </style>
