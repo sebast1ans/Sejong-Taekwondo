@@ -16,14 +16,14 @@
                     <v-card-text class="text--primary" v-html="coach.cardText">
                     </v-card-text>
                     <v-card-actions>
-                        <v-dialog v-model="coach.dialog" scrollable width="600px">
+                        <v-dialog v-model="coachDialog[coach.id]" scrollable width="600px">
                             <template v-slot:activator="{ on }">
                                 <v-btn text color="#DA0A16" slot="activator" v-on="on">Více</v-btn>
                             </template>
                             <v-card>
                                 <v-card-title class="d-flex justify-space-between">
                                     {{ coach.name }}
-                                    <v-btn icon @click="coach.dialog = false">
+                                    <v-btn icon @click.stop="$set(coachDialog, coach.id, false)">
                                         <v-icon>close</v-icon>
                                     </v-btn>
                                 </v-card-title>
@@ -53,14 +53,14 @@
                     <v-card-text v-html="assistantCoach.cardText">
                     </v-card-text>
                     <v-card-actions>
-                        <v-dialog v-model="assistantCoach.dialog" scrollable width="600px">
+                        <v-dialog v-model="coachDialog[assistantCoach.id]" scrollable width="600px">
                             <template v-slot:activator="{ on }">
                                 <v-btn text color="#DA0A16" slot="activator" v-on="on">Více</v-btn>
                             </template>
                             <v-card>
                                 <v-card-title class="d-flex justify-space-between">
                                     {{ assistantCoach.name }}
-                                    <v-btn icon @click="assistantCoach.dialog = false">
+                                    <v-btn icon @click.stop="$set(coachDialog, assistantCoach.id, false)">
                                         <v-icon>close</v-icon>
                                     </v-btn>
                                 </v-card-title>
@@ -86,7 +86,8 @@ export default {
     data() {
         return {
             mainCoaches: [],
-            assistantCoaches: []
+            assistantCoaches: [],
+            coachDialog: {}
         }
     },
 

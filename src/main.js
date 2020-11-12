@@ -8,6 +8,11 @@ import 'material-design-icons/iconfont/material-icons.css'
 Vue.use(VueScrollactive);
 Vue.config.productionTip = false;
 
+// Filters
+Vue.filter('snippet', function (value) {
+  return value.length > 200 ? `${value.slice(0, 200)}...` : value
+})
+
 new Vue({
   router,
   vuetify,

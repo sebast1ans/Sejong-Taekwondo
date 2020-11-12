@@ -41,7 +41,7 @@
                     <v-card>
                         <v-card-title>{{ article.title }}</v-card-title>
                         <v-card-subtitle>{{ formattedDate(article.timestamp) }}</v-card-subtitle>
-                        <v-card-text>{{ article.content }}</v-card-text>
+                        <v-card-text>{{ article.content | snippet }}</v-card-text>
                         <v-card-actions>
                             <v-spacer></v-spacer>
                             <v-btn>Upravit</v-btn>

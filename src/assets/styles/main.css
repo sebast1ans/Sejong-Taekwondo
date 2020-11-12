@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap");
 @font-face {
-    font-family: Akrobat-Black;
-    src: url("~@/assets/fonts/Akrobat/TTF/Akrobat-Black.ttf");
+  font-family: Akrobat-Black;
+  src: url("~@/assets/fonts/Akrobat/TTF/Akrobat-Black.ttf");
 }
 body, html {
   overflow: hidden;
@@ -39,17 +39,21 @@ a:hover, a:visited, a:focus {
 }
 
 .accent-line {
-    height: 4px;
-    width: 69px;
-    margin: 0 auto 40px;
-    background-color: #DA0A16;
-    border-radius: 1px;
+  height: 4px;
+  width: 69px;
+  margin: 0 auto 40px;
+  background-color: #DA0A16;
+  border-radius: 1px;
+}
+
+.v-card__text, .v-card__title {
+  word-break: normal;
 }
 
 @media (max-width: 992px) {
-    h1 {
-        font-size: 40px;
-    }
+  h1 {
+    font-size: 40px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

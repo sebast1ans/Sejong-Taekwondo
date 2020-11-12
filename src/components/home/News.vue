@@ -11,7 +11,7 @@
                         <v-card flat height="100%">
                             <v-card-title>{{ article.title }}</v-card-title>
                             <v-card-subtitle>{{ formattedDate(article.timestamp) }}</v-card-subtitle>
-                            <v-card-text>{{ article.content }}</v-card-text>
+                            <v-card-text>{{ article.content | snippet }}</v-card-text>
                             <v-card-actions>
                                 <v-btn text color="#DA0A16">Celý článek</v-btn>
                             </v-card-actions>
