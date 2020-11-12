@@ -39,17 +39,17 @@ a:hover, a:visited, a:focus {
 }
 
 .accent-line {
-    height: 4px;
-    width: 69px;
-    margin: 0 auto 40px;
-    background-color: #DA0A16;
-    border-radius: 1px;
+  height: 4px;
+  width: 69px;
+  margin: 0 auto 40px;
+  background-color: #DA0A16;
+  border-radius: 1px;
 }
 
 @media (max-width: 992px) {
-    h1 {
-        font-size: 40px;
-    }
+  h1 {
+    font-size: 40px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

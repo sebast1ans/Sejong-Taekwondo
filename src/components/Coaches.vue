@@ -5,7 +5,8 @@
         <v-container>
             <v-row class="d-flex justify-center">
 
-                <v-card v-for="coach in mainCoaches.slice().reverse()" width="330" class="mt-8 mx-4 mb-4">
+                <v-card v-for="coach in mainCoaches.slice().reverse()" :key="coach.id" width="330"
+                        class="mt-8 mx-4 mb-4">
                     <v-sheet class="d-flex justify-space-around">
                         <v-img class="mt-n8 elevation-6" max-width="80%"
                                :src="require(`@/assets/images/coaches/${coach.picture}`)"></v-img>
@@ -15,14 +16,14 @@
                     <v-card-text class="text--primary" v-html="coach.cardText">
                     </v-card-text>
                     <v-card-actions>
-                        <v-dialog v-model="coach.dialog" scrollable width="600px">
+                        <v-dialog v-model="coachDialog[coach.id]" scrollable width="600px">
                             <template v-slot:activator="{ on }">
                                 <v-btn text color="#DA0A16" slot="activator" v-on="on">Více</v-btn>
                             </template>
                             <v-card>
                                 <v-card-title class="d-flex justify-space-between">
                                     {{ coach.name }}
-                                    <v-btn icon @click="coach.dialog = false">
+                                    <v-btn icon @click.stop="$set(coachDialog, coach.id, false)">
                                         <v-icon>close</v-icon>
                                     </v-btn>
                                 </v-card-title>
@@ -37,33 +38,34 @@
 
             <v-row class="d-flex justify-center mt-4">
 
-                <v-card v-for="asistentCoach in assistantCoaches" max-width="260" class="my-12 mx-3">
+                <v-card v-for="assistantCoach in assistantCoaches" :key="assistantCoach.id" max-width="260"
+                        class="my-12 mx-3">
                     <v-sheet class="d-flex justify-space-around">
                         <v-img
                                 class="mt-n8 elevation-6"
                                 max-width="80%"
-                                :src="require(`@/assets/images/coaches/${asistentCoach.picture}`)"
+                                :src="require(`@/assets/images/coaches/${assistantCoach.picture}`)"
                         ></v-img>
                     </v-sheet>
 
-                    <v-card-title>{{ asistentCoach.name }}</v-card-title>
-                    <v-card-subtitle>{{ asistentCoach.subtitle }}</v-card-subtitle>
-                    <v-card-text v-html="asistentCoach.cardText">
+                    <v-card-title>{{ assistantCoach.name }}</v-card-title>
+                    <v-card-subtitle>{{ assistantCoach.subtitle }}</v-card-subtitle>
+                    <v-card-text v-html="assistantCoach.cardText">
                     </v-card-text>
                     <v-card-actions>
-                        <v-dialog v-model="asistentCoach.dialog" scrollable width="600px">
+                        <v-dialog v-model="coachDialog[assistantCoach.id]" scrollable width="600px">
                             <template v-slot:activator="{ on }">
                                 <v-btn text color="#DA0A16" slot="activator" v-on="on">Více</v-btn>
                             </template>
                             <v-card>
                                 <v-card-title class="d-flex justify-space-between">
-                                    {{ asistentCoach.name }}
-                                    <v-btn icon @click="asistentCoach.dialog = false">
+                                    {{ assistantCoach.name }}
+                                    <v-btn icon @click.stop="$set(coachDialog, assistantCoach.id, false)">
                                         <v-icon>close</v-icon>
                                     </v-btn>
                                 </v-card-title>
                                 <v-divider></v-divider>
-                                <v-card-text v-html="asistentCoach.dialogText">
+                                <v-card-text v-html="assistantCoach.dialogText">
                                 </v-card-text>
                             </v-card>
                         </v-dialog>
@@ -83,7 +85,8 @@ export default {
 
     data() {
         return {
-            coaches: []
+            coaches: [],
+            coachDialog: {}
         }
     },
     computed: {
