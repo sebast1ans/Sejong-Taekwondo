@@ -6,10 +6,11 @@
 
             <v-sheet elevation="5" light>
                 <v-row>
-                    <v-col cols="12" xs="12" sm="6" md="3" v-for="article in news" xs12 md6>
+                    <v-col cols="12" xs="12" sm="6" md="3" v-for="(article) in news.slice( -4).reverse()"
+                           :key="article.id">
                         <v-card flat height="100%">
                             <v-card-title>{{ article.title }}</v-card-title>
-                            <v-card-subtitle>{{ article.date }}</v-card-subtitle>
+                            <v-card-subtitle>{{ formattedDate(article.timestamp) }}</v-card-subtitle>
                             <v-card-text>{{ article.content }}</v-card-text>
                             <v-card-actions>
                                 <v-btn text color="#DA0A16">Celý článek</v-btn>
@@ -30,12 +31,13 @@ export default {
     name: "News",
     data() {
         return {
-            news: []
+            news: [],
+            monthsCzech: ["ledna", "února", "března", "dubna", "května", "června", "července", "srpna", "září", "října", "listopadu", "prosince"]
         }
     },
 
     created() {
-        db.collection("news").get()
+        db.collection("news").orderBy('timestamp').get()
             .then(snapshot => {
                 snapshot.forEach(doc => {
                     let article = doc.data()
@@ -43,6 +45,14 @@ export default {
                     this.news.push(article)
                 })
             })
+    },
+
+    methods: {
+        formattedDate(timestamp) {
+            let date = new Date(timestamp)
+            return `${date.getDay()}. ${this.monthsCzech[date.getMonth()]}`
+
+        }
     }
 }
 </script>

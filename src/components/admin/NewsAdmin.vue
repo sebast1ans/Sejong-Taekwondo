@@ -1,12 +1,13 @@
 <template>
     <section id="news-admin">
         <v-container>
-            <h1>All News</h1>
+            <h1>Všechny aktuality</h1>
+
+            <!--            Add new article-->
             <v-dialog v-model="dialog" persistent max-width="600px" transition="dialog-bottom-transition">
                 <template v-slot:activator="{ on, attrs }">
                     <v-btn v-bind="attrs" v-on="on">Přidat nový článek</v-btn>
                 </template>
-
                 <v-card>
                     <v-card-title>Nový článek</v-card-title>
                     <v-card-text>
@@ -28,20 +29,22 @@
                     </v-card-text>
                     <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn @click="dialog = false">Uložit</v-btn>
-                        <v-btn @click="addArticle()">Publikovat</v-btn>
                         <v-btn @click="cancelArticle(); dialog = false">Storno</v-btn>
+                        <v-btn @click="addArticle()">Publikovat</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-dialog>
 
+            <!--            Show articles-->
             <v-row>
-                <v-col cols="12" md="3" sm="6" v-for="article in news" :key="article.id">
+                <v-col cols="12" md="3" sm="6" v-for="article in news.slice().reverse()" :key="article.id">
                     <v-card>
                         <v-card-title>{{ article.title }}</v-card-title>
-                        <v-card-subtitle>{{ article.date }}</v-card-subtitle>
+                        <v-card-subtitle>{{ formattedDate(article.timestamp) }}</v-card-subtitle>
                         <v-card-text>{{ article.content }}</v-card-text>
                         <v-card-actions>
+                            <v-spacer></v-spacer>
+                            <v-btn>Upravit</v-btn>
                             <v-btn @click="deleteArticle(article.id)">Vymazat</v-btn>
                         </v-card-actions>
                     </v-card>
@@ -66,7 +69,8 @@ export default {
             // date: null,
             content: null,
             feedback: null,
-            slug: null
+            slug: null,
+            monthsCzech: ["ledna", "února", "března", "dubna", "května", "června", "července", "srpna", "září", "října", "listopadu", "prosince"]
         }
     },
 
@@ -82,11 +86,16 @@ export default {
                 })
                 db.collection("news").add({
                     title: this.title,
+                    timestamp: Date.now(),
                     content: this.content,
                     slug: this.slug
                 }).then(() => {
                     this.dialog = false
-
+                    this.news.push({
+                        title: this.title,
+                        timestamp: Date.now(),
+                        content: this.content
+                    })
                 }).catch(err => {
                     console.log(err)
                 })
@@ -98,19 +107,23 @@ export default {
         deleteArticle(id) {
             db.collection("news").doc(id).delete()
                 .then(() => {
-                    this.news = this.news.filter(article => article.id !== id
-                    )
+                    this.news = this.news.filter(article => article.id !== id)
                 })
         },
 
         cancelArticle() {
             this.title = null
             this.content = null
+        },
+
+        formattedDate(timestamp) {
+            let date = new Date(timestamp)
+            return `${date.getDay()}. ${this.monthsCzech[date.getMonth()]} ${date.getHours()}:${date.getMinutes()}`
         }
     },
 
     created() {
-        db.collection("news").get()
+        db.collection("news").orderBy('timestamp').get()
             .then(snapshot => {
                 snapshot.forEach(doc => {
                     let article = doc.data()
