@@ -13,11 +13,14 @@
                             <v-card-subtitle>{{ formattedDate(article.timestamp) }}</v-card-subtitle>
                             <v-card-text>{{ article.content | snippet }}</v-card-text>
                             <v-card-actions>
-                                <v-btn text color="#DA0A16">Celý článek</v-btn>
+                                <v-btn text color="#DA0A16" :to="{name: 'Article', params: {article: article.slug
+                                }}">Celý článek
+                                </v-btn>
                             </v-card-actions>
                         </v-card>
                     </v-col>
-                    <!--                            <v-btn text color="#DA0A16" class="all-news"><strong>Všechny novinky</strong></v-btn>-->
+                    <v-btn text color="#DA0A16" class="all-news" :to="{name: 'AllNews'}"><strong>Všechny
+                        novinky</strong></v-btn>
                 </v-row>
             </v-sheet>
         </v-container>

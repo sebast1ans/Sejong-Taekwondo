@@ -85,9 +85,19 @@ export default {
 
     data() {
         return {
-            mainCoaches: [],
-            assistantCoaches: [],
+            coaches: [],
             coachDialog: {}
+        }
+    },
+
+    computed: {
+        mainCoaches() {
+            return this.coaches.filter(coach => coach.role.match("main")
+            )
+        },
+        assistantCoaches() {
+            return this.coaches.filter(coach => coach.role.match("assistant")
+            )
         }
     },
 
@@ -95,16 +105,9 @@ export default {
         db.collection("coaches").get()
             .then(snapshot => {
                 snapshot.forEach(doc => {
-                    if (doc.data().role === "main") {
-                        let mainCoach = doc.data()
-                        mainCoach.id = doc.id
-                        this.mainCoaches.push(mainCoach)
-                    }
-                    if (doc.data().role === "assistant") {
-                        let assistantCoach = doc.data()
-                        assistantCoach.id = doc.id
-                        this.assistantCoaches.push(assistantCoach)
-                    }
+                    let coach = doc.data()
+                    coach.id = doc.id
+                    this.coaches.push(coach)
                 })
 
             })

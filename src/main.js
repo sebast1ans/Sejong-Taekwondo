@@ -4,13 +4,14 @@ import router from './router'
 import vuetify from './plugins/vuetify'
 import VueScrollactive from 'vue-scrollactive';
 import 'material-design-icons/iconfont/material-icons.css'
+import Vuetify from "vuetify";
 
 Vue.use(VueScrollactive);
 Vue.config.productionTip = false;
 
 // Filters
 Vue.filter('snippet', function (value) {
-  return value.length > 200 ? `${value.slice(0, 200)}...` : value
+    return value.length > 190 ? `${value.slice(0, 190)}...` : value
 })
 
 new Vue({
