@@ -5,7 +5,7 @@
 
             <div class="nav-mobile d-flex justify-space-around align-center">
                 <img src="@/assets/images/logos/whiteLogo.svg" alt="" class="nav-logo" height="85"
-                     @click="$vuetify.goTo('#welcome')">
+                     @click="$vuetify.goTo('#welcome')" @dblclick="$router.replace({name: 'Admin'})">
                 <v-btn class="menu-toggle" outlined fab color="white" @click="navReveal = !navReveal">
                     <v-icon color="white">menu</v-icon>
                 </v-btn>

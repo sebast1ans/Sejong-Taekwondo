@@ -19,10 +19,17 @@
                             </v-card-actions>
                         </v-card>
                     </v-col>
-                    <v-btn text color="#DA0A16" class="all-news" :to="{name: 'AllNews'}"><strong>Všechny
-                        novinky</strong></v-btn>
                 </v-row>
             </v-sheet>
+            <v-row>
+                <v-col class="d-flex">
+                    <v-spacer></v-spacer>
+                    <v-btn text color="#DA0A16" class="all-news" :to="{name: 'AllNews'}"><strong>Všechny
+                        novinky</strong></v-btn>
+                    <v-spacer></v-spacer>
+                </v-col>
+            </v-row>
+
         </v-container>
     </section>
 </template>

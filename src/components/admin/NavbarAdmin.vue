@@ -5,13 +5,15 @@
             <v-toolbar-title class="text-uppercase">Administrace</v-toolbar-title>
             <v-spacer></v-spacer>
             <router-link :to="{name: 'Home'}">
-                <v-btn text><span>Hlavní stránka</span></v-btn>
+                <v-btn text v-if="!loggedIn"><span><v-icon>mdi-home</v-icon> Hlavní stránka</span></v-btn>
             </router-link>
 
-            <v-btn text v-if="loggedin" @click="logout"><span>Odhlásit se</span>
-                <v-icon>mdi-logout</v-icon>
+            <v-btn text @click="logout" v-if="loggedIn">
+                <span><v-icon>mdi-logout</v-icon> Odhlásit se</span>
+
             </v-btn>
-            <template v-slot:extension v-if="loggedin">
+
+            <template v-slot:extension v-if="loggedIn">
                 <v-tabs align-with-title>
                     <v-tab :to="{name: 'News'}">Aktuality</v-tab>
                     <v-tab :to="{name: 'Members'}">Členové</v-tab>
@@ -22,22 +24,27 @@
 </template>
 
 <script>
-import firebase from 'firebase'
+import firebase from 'firebase/app'
+import 'firebase/auth'
 
 export default {
     name: "NavbarAdmin",
-    props: ['loggedin'],
-    data: () => ({
-        drawer: false,
+    props: ['loggedIn'],
 
+    data: () => ({
+        feedback: '',
     }),
+
     methods: {
         logout() {
+            this.isActive = true
             firebase.auth().signOut()
                 .then(() => {
-                    this.$emit('loggedout', false)
-                    this.$router.push({name: 'Admin'})
-                })
+                    this.$router.replace({name: 'Admin'})
+                }).catch(err => {
+                console.log(err.message)
+                this.feedback = err.message
+            })
         }
     }
 

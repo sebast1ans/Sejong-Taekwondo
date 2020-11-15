@@ -1,16 +1,19 @@
 <template>
     <div id="admin">
-        <NavbarAdmin v-bind:loggedin="loggedin" v-on:loggedout="updateLoggedState($event)"/>
-        <router-view v-if="loggedin === true"/>
-        <Login v-on:loggedin="updateLoggedState($event)" v-if="!loggedin"/>
-<!--        <Dashboard v-if="loggedin"/>-->
+        <NavbarAdmin v-bind:loggedIn="loggedIn"/>
+        <router-view v-if="loggedIn === true"/>
+        <Login v-if="!loggedIn"/>
+        <!--        <Dashboard v-if="loggedIn"/>-->
     </div>
 </template>
 
 <script>
 import NavbarAdmin from "@/components/admin/NavbarAdmin"
 import Login from "@/components/auth/Login"
-import Dashboard from "@/components/admin/Dashboard";
+import Dashboard from "@/components/admin/Dashboard"
+import firebase from "firebase/app"
+import "firebase/auth"
+
 export default {
     name: "Admin",
     components: {
@@ -20,13 +23,15 @@ export default {
     },
 
     data: () => ({
-        loggedin: false
+        loggedIn: false
     }),
-    methods: {
-        updateLoggedState(param) {
-            this.loggedin = param
-        }
-    }
+
+    created() {
+        firebase.auth().onAuthStateChanged(user => {
+            this.loggedIn = !!user
+        })
+    },
+
 }
 </script>
 <style lang="scss" scoped>
