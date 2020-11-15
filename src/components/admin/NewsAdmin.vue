@@ -67,7 +67,9 @@
             <v-row>
                 <v-col
                         cols="12"
-                        md="3"
+                        xl="2"
+                        lg="3"
+                        md="4"
                         sm="6"
                         v-for="article in news.slice().reverse()"
                         :key="article.id">
@@ -192,7 +194,6 @@ export default {
             confirmDeleteArticleDialog: {},
             title: null,
             content: null,
-            // updatesTimestamp: [],
             feedback: null,
             slug: null,
             monthsCzech: ["ledna", "února", "března", "dubna", "května", "června", "července", "srpna", "září", "října", "listopadu", "prosince"]
