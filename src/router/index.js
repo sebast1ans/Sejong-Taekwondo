@@ -5,8 +5,10 @@ import 'firebase/auth'
 import Home from '@/views/Home'
 import Missing from '@/views/Error404'
 import Admin from "@/views/Admin"
-import AllNews from "@/components/news/AllNews"
+// import NewsView from "@/components/articles/NewsView"
+// import AllNews from "@/components/news/AllNews";
 import Article from "@/components/news/Article"
+import NewsView from "@/components/news/NewsView";
 
 Vue.use(VueRouter);
 
@@ -19,13 +21,13 @@ const routes = [
         component: Home
     },
     {
-        path: '/news',
-        name: 'AllNews',
+        path: '/articles',
+        name: 'NewsView',
         meta: {title: 'Aktuality | Sejong Taekwondo'},
-        component: AllNews
+        component: NewsView
     },
     {
-        path: '/news/:article',
+        path: '/articles/:article',
         name: 'Article',
         component: Article
     },

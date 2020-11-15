@@ -4,7 +4,7 @@ import router from './router'
 import vuetify from './plugins/vuetify'
 import VueScrollactive from 'vue-scrollactive';
 import 'material-design-icons/iconfont/material-icons.css'
-import Vuetify from "vuetify";
+// import Vuetify from "vuetify";
 import firebase from 'firebase/app'
 import 'firebase/auth'
 
@@ -16,9 +16,47 @@ Vue.filter('snippet', function (value) {
     return value.length > 190 ? `${value.slice(0, 190)}...` : value
 })
 
+//Mixins
+Vue.mixin({
+    methods: {
+        formattedDateTime(timestamp) {
+            return `${
+                new Date(timestamp).toLocaleDateString(
+                    'cs',
+                    {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    }
+                )
+            }, ${
+                new Date(timestamp).toLocaleTimeString(
+                    'cs',
+                    {
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    }
+                )
+            }`
+        },
+
+        formattedDate(timestamp) {
+            return `${
+                new Date(timestamp).toLocaleDateString(
+                    'cs',
+                    {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    }
+                )
+            }`
+        }
+    }
+})
 let app
 
-firebase.auth().onAuthStateChanged(user => {
+firebase.auth().onAuthStateChanged(() => {
     if (!app) {
         app = new Vue({
             router,

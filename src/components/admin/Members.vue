@@ -2,7 +2,7 @@
     <v-container>
         <v-row>
             <v-col>
-                <h1>Members</h1>
+                <h1>Členové</h1>
                 <p>Ve výrobě :)</p>
             </v-col>
         </v-row>

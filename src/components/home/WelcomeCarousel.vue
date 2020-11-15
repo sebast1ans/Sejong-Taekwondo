@@ -32,7 +32,7 @@ export default {
     methods: {}
 }
 
-
+// TODO change carousel plugin to https://github.surmon.me/vue-awesome-swiper/
 </script>
 
 <style lang="scss" scoped>

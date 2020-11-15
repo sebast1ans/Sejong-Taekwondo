@@ -42,6 +42,12 @@ h1 {
   //font-weight: 800;
 }
 
+h2 {
+  font-family: "Akrobat-Black", "Open Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 2.3em;
+}
+
 a {
   color: $sejongRed;
   @include stdTransition(all, .2s, ease-in-out);
@@ -63,6 +69,13 @@ a {
   border-radius: 1px;
 }
 
+.accent-line-column {
+  height: 100%;
+  width: 4px;
+  background-color: $sejongRed;
+  border-radius: 1px;
+}
+
 .v-card__text, .v-card__title {
   word-break: normal;
 }
@@ -70,6 +83,10 @@ a {
 @media(max-width: 992px) {
   h1 {
     font-size: 40px;
+  }
+
+  h2 {
+    font-size: 2em !important;
   }
 
 }

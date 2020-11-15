@@ -63,7 +63,7 @@
                 </v-card>
             </v-dialog>
 
-            <!--            Show articles-->
+            <!--Show articles-->
             <v-row>
                 <v-col
                         cols="12"
@@ -76,6 +76,7 @@
                     <v-card>
                         <v-card-actions class="pb-0">
                             <v-spacer></v-spacer>
+                            <!--Delete article confirmation-->
                             <v-dialog v-model="confirmDeleteArticleDialog[article.id]" max-width="280">
                                 <template v-slot:activator="{on, attrs}">
                                     <v-btn icon small v-bind="attrs" v-on="on">
@@ -99,10 +100,10 @@
                                 </v-card>
                             </v-dialog>
 
-
+                            <!--Article card-->
                         </v-card-actions>
                         <v-card-title class="pt-0">{{ article.title }}</v-card-title>
-                        <v-card-subtitle>{{ formattedDate(article.timestamp) }}</v-card-subtitle>
+                        <v-card-subtitle>{{ formattedDateTime(article.timestamp) }}</v-card-subtitle>
                         <!--                        <v-card-subtitle>{{ getLatestUpdateDate(article.updatesTimestamp) }}</v-card-subtitle>-->
                         <v-card-text>{{ article.content | snippet }}</v-card-text>
                         <v-card-actions>
@@ -131,6 +132,7 @@
                                                 <v-row>
                                                     <v-col
                                                             cols="12">
+                                                        <!-- TODO wysiwyg editor https://tiptap.dev-->
                                                         <v-text-field
                                                                 label="Titulek"
                                                                 name="title"
@@ -152,7 +154,7 @@
                                                 <p>Úpravy:</p>
                                                 <p
                                                         v-for="update in article.updatesTimestamp">
-                                                    {{ formattedDate(update) }}</p>
+                                                    {{ formattedDateTime(update) }}</p>
                                             </v-sheet>
                                         </v-container>
                                     </v-card-text>
@@ -207,7 +209,7 @@ export default {
                 // create a slug
                 this.slug = slugify(this.title, {
                     replacement: "-",
-                    remove: /[$*_+~.()'"!\-:@]/g,
+                    remove: /[$*_+~.()'"!\-:@#]/g,
                     lower: true
                 })
                 db.collection("news").add({
@@ -229,9 +231,15 @@ export default {
         updateArticle(id) {
             if (this.title && this.content) {
                 this.feedback = null
+                this.slug = slugify(this.title, {
+                    replacement: "-",
+                    remove: /[$*_+~.()'"!\-:@#]/g,
+                    lower: true
+                })
                 db.collection("news").doc(id).update({
                     title: this.title,
                     content: this.content,
+                    slug: this.slug,
                     updatesTimestamp: firebase.firestore.FieldValue.arrayUnion(Date.now())
                 }).then(() => {
                     this.feedback = 'Úspěšně upraveno.'
@@ -261,26 +269,6 @@ export default {
             this.content = content
         },
 
-        formattedDate(timestamp) {
-            return `${
-                new Date(timestamp).toLocaleDateString(
-                    'cs',
-                    {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                    }
-                )
-            }, ${
-                new Date(timestamp).toLocaleTimeString(
-                    'cs',
-                    {
-                        hour: '2-digit',
-                        minute: '2-digit'
-                    }
-                )
-            }`
-        },
 
         // TODO implement
         // getLatestUpdateDate(arr) {
