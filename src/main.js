@@ -16,6 +16,10 @@ Vue.filter('snippet', function (value) {
     return value.length > 190 ? `${value.slice(0, 190)}...` : value
 })
 
+Vue.filter('titleSnippet', function (value) {
+    return value.length > 42 ? `${value.slice(0, 42)}...` : value
+})
+
 //Mixins
 Vue.mixin({
     methods: {

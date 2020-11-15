@@ -9,7 +9,14 @@
                     <v-col cols="12" xs="12" sm="6" md="3" v-for="(article) in articles.slice( -4).reverse()"
                            :key="article.id">
                         <v-card flat height="100%">
-                            <v-card-title>{{ article.title }}</v-card-title>
+                            <v-tooltip top max-width="250" nudge-bottom="25" open-delay="700">
+                                <template v-slot:activator="{on, attrs}">
+                                    <span v-bind="attrs" v-on="on">
+                                        <v-card-title>{{ article.title | titleSnippet }}</v-card-title>
+                                    </span>
+                                </template>
+                                <span>{{ article.title }}</span>
+                            </v-tooltip>
                             <v-card-subtitle>{{ formattedDate(article.timestamp) }}</v-card-subtitle>
                             <v-card-text>{{ article.content | snippet }}</v-card-text>
                             <v-card-actions>
