@@ -13,7 +13,6 @@
                             </v-avatar>
                         </v-sheet>
                     </v-card>
-                    <!--                    <p class="offset-4 mt-n8 mr-3 text-right"> <v-icon v-for="n in 5" color="yellow darken-2">grade</v-icon></p>-->
                     <p class="font-weight-bold offset-4 mt-3">{{ review.name }}</p>
                 </v-col>
             </v-row>
