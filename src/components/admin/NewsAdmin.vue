@@ -262,8 +262,24 @@ export default {
         },
 
         formattedDate(timestamp) {
-            let date = new Date(timestamp)
-            return `${date.getDay()}. ${this.monthsCzech[date.getMonth()]} ${date.getFullYear()}, ${date.getHours()}:${date.getMinutes()}`
+            return `${
+                new Date(timestamp).toLocaleDateString(
+                    'cs',
+                    {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    }
+                )
+            }, ${
+                new Date(timestamp).toLocaleTimeString(
+                    'cs',
+                    {
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    }
+                )
+            }`
         },
 
         // TODO implement

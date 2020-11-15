@@ -59,9 +59,16 @@ export default {
 
     methods: {
         formattedDate(timestamp) {
-            let date = new Date(timestamp)
-            return `${date.getDay()}. ${this.monthsCzech[date.getMonth()]}`
-
+            return `${
+                new Date(timestamp).toLocaleDateString(
+                    'cs',
+                    {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    }
+                )
+            }`
         }
     }
 }

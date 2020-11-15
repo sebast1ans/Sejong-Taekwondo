@@ -4,7 +4,7 @@
             <v-row>
                 <v-spacer></v-spacer>
                 <v-col>
-                    <v-card max-width="500" outlined>
+                    <v-card width="400" outlined>
                         <v-card-title>Přihlášení</v-card-title>
                         <v-card-text>
                             <v-form @submit.prevent="login">
@@ -67,10 +67,10 @@ export default {
 
     methods: {
         login() {
-            this.isActive = true
             if (this.email && this.password) {
+                this.isActive = true
                 firebase.auth().signInWithEmailAndPassword(this.email, this.password)
-                    .then(cred => {
+                    .then(() => {
                         this.$router.replace({name: 'News'})
                     }).catch(err => {
                     this.isActive = false
