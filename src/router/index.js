@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import firebase from 'firebase/app'
+import 'firebase/auth'
 import Home from '@/views/Home'
 import Missing from '@/views/Error404'
 import Admin from "@/views/Admin"
@@ -9,6 +11,7 @@ import Article from "@/components/news/Article"
 Vue.use(VueRouter);
 
 const routes = [
+    // Public zone
     {
         path: '/',
         name: 'Home',
@@ -26,6 +29,8 @@ const routes = [
         name: 'Article',
         component: Article
     },
+
+    // Admin zone
     {
         path: '/admin',
         name: 'Admin',
@@ -39,13 +44,13 @@ const routes = [
                 path: 'news',
                 name: 'News',
                 component: () => import('@/components/admin/NewsAdmin'),
-                meta: {title: `Aktuality - administrace | Sejong Taekwondo`}
+                meta: {title: `Aktuality - administrace | Sejong Taekwondo`, requiresAuth: true}
             },
             {
                 path: 'members',
                 name: 'Members',
                 component: () => import('@/components/admin/Members'),
-                meta: {title: `Členové | Sejong Taekwondo`}
+                meta: {title: `Členové | Sejong Taekwondo`, requiresAuth: true}
             }
         ]
     },
@@ -62,6 +67,20 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
     document.title = to.meta.title
+    const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
+    const isAuthenticated = firebase.auth().currentUser
+
+    if (requiresAuth && !isAuthenticated) {
+        next('/admin')
+    } else {
+        next()
+    }
+
+    if (to.name === 'Admin' && isAuthenticated) {
+        next('/admin/news')
+    } else {
+        next()
+    }
     next()
 });
 
