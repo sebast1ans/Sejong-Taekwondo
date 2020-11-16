@@ -1,6 +1,5 @@
 <template>
     <div id="news-view">
-
         <v-app-bar dark height="100">
             <v-container>
                 <v-row class="align-center">
@@ -17,7 +16,7 @@
             </v-container>
         </v-app-bar>
 
-        <v-container>
+        <v-container class="articles">
             <h1>Aktuality</h1>
             <div class="accent-line"></div>
             <v-row v-for="article in articles.slice().reverse()" :key="articles.id" class="pb-8">
@@ -33,17 +32,19 @@
                     <br>
                     <router-link :to="'/articles/' + article.slug" class="link-to-the-article">Celý článek</router-link>
                 </v-col>
-
             </v-row>
         </v-container>
+        <Footer/>
     </div>
 </template>
 
 <script>
 import db from "@/firebase/init";
+import Footer from "@/components/Footer";
 
 export default {
     name: "NewsView",
+    components: {Footer},
     data: () => ({
         articles: []
     }),
@@ -61,6 +62,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.articles {
+  position: relative;
+  padding-bottom: 10em;
+}
+
 a {
   color: black !important;
   text-decoration: none;

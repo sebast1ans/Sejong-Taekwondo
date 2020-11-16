@@ -38,15 +38,20 @@
                 </v-col>
             </v-row>
         </v-container>
+        <Footer/>
     </div>
 </template>
 
 <script>
 
 import db from "@/firebase/init";
+import Footer from "@/components/Footer"
 
 export default {
     name: "Article",
+    components: {
+        Footer
+    },
     data: () => ({
         article: {}
     }),

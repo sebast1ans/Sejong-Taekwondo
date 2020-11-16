@@ -1,6 +1,6 @@
 <template>
     <section id="news">
-        <h1>Novinky</h1>
+        <h1>Aktuality</h1>
         <div class="accent-line"></div>
         <v-container>
 
@@ -35,7 +35,7 @@
                 <v-col class="d-flex">
                     <v-spacer></v-spacer>
                     <v-btn text color="#DA0A16" class="all-news" :to="{name: 'NewsView'}"><strong>Všechny
-                        novinky</strong></v-btn>
+                        aktuality</strong></v-btn>
                     <v-spacer></v-spacer>
                 </v-col>
             </v-row>
@@ -71,8 +71,5 @@ export default {
 </script>
 
 <style scoped>
-.space {
-    height: 100%;
-}
 
 </style>

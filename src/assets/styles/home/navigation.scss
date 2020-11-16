@@ -8,6 +8,7 @@ $navbar-font-family: 'Oswald';
   transition: $type $duration $timing;
 }
 
+
 nav {
   font-family: $navbar-font-family;
   text-transform: uppercase;
@@ -18,6 +19,14 @@ nav {
   -webkit-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
   -moz-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
   transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
+
+  ul {
+    padding: 0 !important;
+
+    li {
+      list-style-type: none;
+    }
+  }
 
   .nav-elements {
     display: flex;
@@ -36,7 +45,6 @@ nav {
       display: flex;
 
       .nav-item {
-        list-style-type: none;
         @include stdTransition(background, .3s, ease-in-out);
 
         &:active,
@@ -74,25 +82,17 @@ nav {
       }
     }
 
-    @media(max-width: 992px) {
+    @media(max-width: 960px) {
       flex-direction: column;
       align-items: normal;
-
 
       .menu-toggle {
         display: block;
       }
 
-      .active {
-        display: flex !important;
-        padding-bottom: 1.5em;
-      }
-
       .nav-items {
-        display: none;
         flex-direction: column;
         align-items: center;
-
 
         .nav-item {
           padding-top: .8rem;
@@ -107,5 +107,4 @@ nav {
   border-bottom: 1px solid fade-out(white, .7);
   background: rgba(0, 0, 0, .87);
   padding: 0;
-
 }

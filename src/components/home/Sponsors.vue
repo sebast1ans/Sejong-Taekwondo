@@ -2,7 +2,7 @@
     <footer class="sponsors">
         <v-container>
             <v-row>
-                <v-col class="d-flex justify-space-between align-center flex-wrap mt-5">
+                <v-col class="d-flex justify-center align-center flex-wrap mt-5">
                     <a href="http://www.worldtaekwondo.org/" target="_blank">
                         <img src="@/assets/images/sponsors/wt.png" alt="" class="sponsor">
                     </a>
