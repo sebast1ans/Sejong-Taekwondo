@@ -61,12 +61,21 @@ export default {
             ],
             scrolled: false,
             mobileScreenOn: false,
-            expand: false
+            expand: true
         }
     },
     created() {
         window.addEventListener('scroll', this.scrolledBeyond)
         window.addEventListener('resize', this.mobileScreen)
+
+        if (window.matchMedia("(max-width: 960px)").matches) {
+            this.mobileScreenOn = false
+            this.expand = false
+        } else {
+            this.mobileScreenOn = true
+            this.expand = true
+        }
+
     },
     destroyed() {
         window.removeEventListener('scroll', this.scrolledBeyond)
@@ -81,10 +90,9 @@ export default {
                 this.mobileScreenOn = false
                 this.expand = false
             } else {
-                this.expand = true
                 this.mobileScreenOn = true
+                this.expand = true
             }
-
         }
     },
     computed: {
