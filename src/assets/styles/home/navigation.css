@@ -10,25 +10,20 @@ nav {
   -moz-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
   transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
 }
-
 nav ul {
   padding: 0 !important;
 }
-
 nav ul li {
   list-style-type: none;
 }
-
 nav .nav-elements {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 nav .nav-elements .nav-logo {
   cursor: pointer;
 }
-
 nav .nav-elements .menu-toggle {
   display: none;
 }
@@ -65,31 +60,28 @@ nav .nav-elements .nav-items .is-active {
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 2px;
 }
-
 @media (max-width: 960px) {
   nav .nav-elements {
     flex-direction: column;
     align-items: normal;
   }
-
   nav .nav-elements .menu-toggle {
     display: block;
   }
-
   nav .nav-elements .nav-items {
     flex-direction: column;
     align-items: center;
   }
-
   nav .nav-elements .nav-items .nav-item {
     padding-top: 0.8rem;
   }
 }
 
 .nav-shrink {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   background: rgba(0, 0, 0, 0.87);
+  backdrop-filter: blur(3px);
   padding: 0;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.14), 0 1px 14px 0 rgba(0, 0, 0, 0.12);
 }
 
 /*# sourceMappingURL=navigation.css.map */

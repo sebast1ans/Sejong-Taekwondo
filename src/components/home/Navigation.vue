@@ -1,6 +1,6 @@
 <template>
     <scrollactive id="nav" :duration="800" bezier-easing-value=".66,0,.33,1" :modify-url=false @scroll="scrolledBeyond"
-                  :class="{'nav-shrink': !mobileScreenOn || scrolled}">
+                  :class="{'nav-shrink': !mobileScreenOn || scrolled }">
         <v-container class="nav-elements">
 
             <div class="nav-mobile d-flex justify-space-around align-center">
@@ -13,7 +13,10 @@
 
             <v-expand-transition>
                 <ul class="nav-items" v-show="expand">
-                    <li v-for="navItem in navItems" class="nav-item" @click="navReveal = false">
+                    <li v-if="!mobileScreenOn" v-for="navItem in navItems" class="nav-item" @click="expand = false">
+                        <a class="nav-link scrollactive-item" :href="navItem.target" v-html="navItem.text"></a>
+                    </li>
+                    <li v-if="mobileScreenOn" v-for="navItem in navItems" class="nav-item">
                         <a class="nav-link scrollactive-item" :href="navItem.target" v-html="navItem.text"></a>
                     </li>
                     <li>
@@ -60,7 +63,7 @@ export default {
                 {target: '#contact', text: 'Kontakt'},
             ],
             scrolled: false,
-            mobileScreenOn: false,
+            mobileScreenOn: null,
             expand: true
         }
     },

@@ -1,7 +1,7 @@
 <template>
     <div id="article">
 
-        <v-app-bar dark height="100">
+        <v-app-bar dark height="109" hide-on-scroll>
             <v-container>
                 <v-row class="align-center">
                     <v-img src="@/assets/images/logos/whiteLogo.svg" max-width="230" max-height="90" contain></v-img>
