@@ -31,11 +31,9 @@
                     <p class="font-italic pr-3">{{ formattedDate(article.timestamp) }}</p>
                     <div class="accent-line-column"></div>
                 </v-col>
-                <article>
-                    <v-col cols="12" md="8" sm="9" xs="12">
-                        <div>{{ article.content }}</div>
-                    </v-col>
-                </article>
+                <v-col cols="12" md="8" sm="9" xs="12">
+                    <div>{{ article.content }}</div>
+                </v-col>
             </v-row>
         </v-container>
         <Footer/>
