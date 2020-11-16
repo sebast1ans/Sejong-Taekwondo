@@ -8,17 +8,20 @@
                 <v-row>
                     <v-col cols="12" xs="12" sm="6" md="3" v-for="(article) in articles.slice( -4).reverse()"
                            :key="article.id">
-                        <v-card flat height="100%">
+                        <v-card flat height="100%" class="d-flex flex-column">
                             <v-tooltip top max-width="250" nudge-bottom="25" open-delay="700">
                                 <template v-slot:activator="{on, attrs}">
                                     <span v-bind="attrs" v-on="on">
-                                        <v-card-title>{{ article.title | titleSnippet }}</v-card-title>
+                                        <v-card-title class="pb-0">{{ article.title | titleSnippet }}</v-card-title>
                                     </span>
                                 </template>
                                 <span>{{ article.title }}</span>
                             </v-tooltip>
-                            <v-card-subtitle>{{ formattedDate(article.timestamp) }}</v-card-subtitle>
-                            <v-card-text>{{ article.content | snippet }}</v-card-text>
+                            <v-card-subtitle class="pt-0 font-italic">{{
+                                    formattedDate(article.timestamp)
+                                }}
+                            </v-card-subtitle>
+                            <v-card-text class="pb-0">{{ article.content | snippet }}</v-card-text>
                             <v-card-actions>
                                 <v-btn text color="#DA0A16" :to="{name: 'Article', params: {article: article.slug
                                 }}">Celý článek
@@ -68,4 +71,8 @@ export default {
 </script>
 
 <style scoped>
+.space {
+    height: 100%;
+}
+
 </style>

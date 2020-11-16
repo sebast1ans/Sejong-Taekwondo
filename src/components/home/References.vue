@@ -1,7 +1,7 @@
 <template>
-    <section class="references pb-12">
-        <!--        <h1>Reference</h1>-->
-        <!--        <div class="accent-line"></div>-->
+    <section id="references" class="pb-12">
+        <h2 class="text-center">Reference</h2>
+        <!--                <div class="accent-line"></div>-->
         <v-container>
             <v-row class="align-end">
                 <v-col cols="12" md="4" v-for="review in reviews" :key="review.name">
@@ -50,7 +50,7 @@ export default {
 </script>
 
 <style scoped>
-.references {
+#references {
     background-color: #f0f0f0;
 }
 </style>

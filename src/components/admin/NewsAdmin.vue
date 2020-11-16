@@ -102,7 +102,7 @@
 
                             <!--Article card-->
                         </v-card-actions>
-                        <v-card-title class="pt-0">{{ article.title }}</v-card-title>
+                        <v-card-title class="pt-0">{{ article.title | titleSnippet }}</v-card-title>
                         <v-card-subtitle>{{ formattedDateTime(article.timestamp) }}</v-card-subtitle>
                         <!--                        <v-card-subtitle>{{ getLatestUpdateDate(article.updatesTimestamp) }}</v-card-subtitle>-->
                         <v-card-text>{{ article.content | snippet }}</v-card-text>

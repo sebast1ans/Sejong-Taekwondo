@@ -4,40 +4,44 @@
   transition: $type $duration $timing;
 }
 
-.discipline {
-  position: relative;
-  cursor: pointer;
+#what-is-taekwondo {
+  background-color: #f0f0f0;
 
-  .discipline-top-layer {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    text-align: center;
-    opacity: 0;
-    @include stdTransition(all, .2s, ease-in-out);
+  .discipline {
+    position: relative;
+    cursor: pointer;
 
-    .discipline-text {
-      font-family: "Akrobat-Black", "Open Sans", sans-serif;
-      color: #ffffff;
-      font-size: 24pt;
-      //font-weight: 700;
-      text-transform: uppercase;
-      text-shadow: 2px 2px 20px rgba(0, 0, 0, .7);
+    .discipline-top-layer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      text-align: center;
+      opacity: 0;
+      @include stdTransition(all, .2s, ease-in-out);
+
+      .discipline-text {
+        font-family: "Akrobat-Black", "Open Sans", sans-serif;
+        color: #ffffff;
+        font-size: 24pt;
+        //font-weight: 700;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 20px rgba(0, 0, 0, .7);
+      }
+
+      &:hover {
+        opacity: 1;
+      }
     }
 
-    &:hover {
-      opacity: 1;
+    .discipline-img {
+      @include stdTransition(all, .2s, ease-in-out);
     }
-  }
 
-  .discipline-img {
-    @include stdTransition(all, .2s, ease-in-out);
-  }
+    &:hover .discipline-img {
+      filter: brightness(.37) grayscale(1);
 
-  &:hover .discipline-img {
-    filter: brightness(.37) grayscale(1);
-
+    }
   }
 }

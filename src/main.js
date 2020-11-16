@@ -13,7 +13,7 @@ Vue.config.productionTip = false;
 
 // Filters
 Vue.filter('snippet', function (value) {
-    return value.length > 190 ? `${value.slice(0, 190)}...` : value
+    return value.length > 222 ? `${value.slice(0, 222)}...` : value
 })
 
 Vue.filter('titleSnippet', function (value) {
