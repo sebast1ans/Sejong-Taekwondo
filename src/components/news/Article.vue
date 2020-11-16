@@ -15,8 +15,7 @@
             </v-container>
         </v-app-bar>
 
-        <v-container>
-
+        <v-container class="article">
             <v-row>
                 <v-col>
                     <router-link :to="{name: 'NewsView'}">
@@ -32,10 +31,11 @@
                     <p class="font-italic pr-3">{{ formattedDate(article.timestamp) }}</p>
                     <div class="accent-line-column"></div>
                 </v-col>
-                <v-col cols="12" md="8" sm="9" xs="12">
-                    <div>{{ article.content }}</div>
-
-                </v-col>
+                <article>
+                    <v-col cols="12" md="8" sm="9" xs="12">
+                        <div>{{ article.content }}</div>
+                    </v-col>
+                </article>
             </v-row>
         </v-container>
         <Footer/>
@@ -68,6 +68,11 @@ export default {
 </script>
 
 <style scoped>
+.article {
+    position: relative;
+    padding-bottom: 10em;
+}
+
 a {
     color: black !important;
     text-decoration: none;

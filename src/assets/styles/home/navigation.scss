@@ -106,7 +106,7 @@ nav {
 .nav-shrink {
   //border-bottom: 1px solid fade-out(white, .7);
   background: rgba(0, 0, 0, .87);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(5px);
   padding: 0;
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.14), 0 1px 14px 0 rgba(0, 0, 0, 0.12)
 }

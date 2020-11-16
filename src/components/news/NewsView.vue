@@ -20,18 +20,21 @@
             <h1>Aktuality</h1>
             <div class="accent-line"></div>
             <v-row v-for="article in articles.slice().reverse()" :key="articles.id" class="pb-8">
-                <v-col cols="12" md="2" sm="3" xs="12" class="pb-0 d-flex">
-                    <p class="font-italic pr-3">{{ formattedDate(article.timestamp) }}</p>
-                    <div class="accent-line-column"></div>
-                </v-col>
-                <v-col cols="12" md="6" sm="9" xs="12">
-                    <h2 class="pb-4">
-                        <router-link :to="'/articles/' + article.slug">{{ article.title }}</router-link>
-                    </h2>
-                    <div>{{ article.content | snippet }}</div>
-                    <br>
-                    <router-link :to="'/articles/' + article.slug" class="link-to-the-article">Celý článek</router-link>
-                </v-col>
+                <article>
+                    <v-col cols="12" md="2" sm="3" xs="12" class="pb-0 d-flex">
+                        <p class="font-italic pr-3">{{ formattedDate(article.timestamp) }}</p>
+                        <div class="accent-line-column"></div>
+                    </v-col>
+                    <v-col cols="12" md="6" sm="9" xs="12">
+                        <h2 class="pb-4">
+                            <router-link :to="'/articles/' + article.slug">{{ article.title }}</router-link>
+                        </h2>
+                        <div>{{ article.content | snippet }}</div>
+                        <br>
+                        <router-link :to="'/articles/' + article.slug" class="link-to-the-article">Celý článek
+                        </router-link>
+                    </v-col>
+                </article>
             </v-row>
         </v-container>
         <Footer/>
