@@ -39,7 +39,6 @@ a {
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-
 a:hover, a:visited, a:focus {
   text-decoration: none;
   color: #a90811;
