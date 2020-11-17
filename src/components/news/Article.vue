@@ -21,7 +21,7 @@
                     <router-link :to="{name: 'NewsView'}">
                         <v-btn text color="#DA0A16">
                             <v-icon>arrow_back</v-icon>
-                            <span class="d-none d-sm-inline">Zpět na všechny články</span></v-btn>
+                            <span>Zpět na všechny články</span></v-btn>
                     </router-link>
                     <h1>{{ article.title }}</h1>
                 </v-col>

@@ -4,7 +4,7 @@
         <div class="accent-line"></div>
         <v-container>
 
-            <v-sheet elevation="5" light>
+            <v-sheet elevation="3" light>
                 <v-row>
                     <v-col cols="12" xs="12" sm="6" md="3" v-for="(article) in articles.slice( -4).reverse()"
                            :key="article.id">

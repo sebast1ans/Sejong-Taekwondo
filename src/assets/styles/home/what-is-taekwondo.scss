@@ -21,6 +21,10 @@
       opacity: 0;
       @include stdTransition(all, .2s, ease-in-out);
 
+      &:hover {
+        backdrop-filter: blur(1.5px);
+      }
+
       .discipline-text {
         font-family: "Akrobat-Black", "Open Sans", sans-serif;
         color: #ffffff;
@@ -41,7 +45,6 @@
 
     &:hover .discipline-img {
       filter: brightness(.37) grayscale(1);
-
     }
   }
 }
