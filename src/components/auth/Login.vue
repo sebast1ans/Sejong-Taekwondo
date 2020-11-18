@@ -4,6 +4,12 @@
             <v-row>
                 <v-spacer></v-spacer>
                 <v-col>
+                    <v-snackbar v-model="snackbar" top color="error">
+                        <span>{{ feedback }}</span>
+                        <v-btn text>
+                            <v-icon @click="snackbar = false">close</v-icon>
+                        </v-btn>
+                    </v-snackbar>
                     <v-card width="400" outlined>
                         <v-card-title>Přihlášení</v-card-title>
                         <v-card-text>
@@ -22,20 +28,13 @@
                                         label="Heslo"
                                         v-model="password"
                                 ></v-text-field>
-                                <p v-if="feedback" class="text-center red--text">{{ feedback }}</p>
+                                <!--                                <p v-if="feedback" class="text-center red&#45;&#45;text">{{ feedback }}</p>-->
                                 <v-card-actions>
                                     <v-spacer></v-spacer>
-                                    <v-btn type="submit" color="primary">
-                                        <span v-if="!isActive">Přihlásit se
+                                    <v-btn type="submit" color="primary" :loading="loading">
+                                        <span>Přihlásit se
                                             <v-icon>mdi-login</v-icon>
                                         </span>
-                                        <v-progress-circular
-                                                indeterminate
-                                                color="white"
-                                                :size="20"
-                                                :width="2"
-                                                v-if="isActive"
-                                        ></v-progress-circular>
                                     </v-btn>
 
                                     <v-spacer></v-spacer>
@@ -62,23 +61,27 @@ export default {
         email: '',
         password: '',
         feedback: '',
-        isActive: false
+        loading: false,
+        snackbar: false
     }),
 
     methods: {
         login() {
             if (this.email && this.password) {
-                this.isActive = true
+                this.loading = true
                 firebase.auth().signInWithEmailAndPassword(this.email, this.password)
                     .then(() => {
                         this.$router.replace({name: 'News'})
+                        this.loading = false
                     }).catch(err => {
-                    this.isActive = false
+                    this.loading = false
                     this.feedback = err.message
+                    this.snackbar = true
                 })
                 this.feedback = null
             } else {
                 this.feedback = "Please fill in both fields"
+                this.snackbar = true
             }
         }
     }

@@ -29,6 +29,7 @@ const routes = [
     {
         path: '/articles/:article',
         name: 'Article',
+        meta: {title: 'Sejong Taekwondo'},
         component: Article
     },
 
@@ -86,4 +87,5 @@ router.beforeEach((to, from, next) => {
     next()
 });
 
+console.log(Article)
 export default router

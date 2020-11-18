@@ -94,7 +94,8 @@ export default {
     data() {
         return {
             coaches: [],
-            coachDialog: {}
+            coachDialog: {},
+            loading: true
         }
     },
 
@@ -116,6 +117,7 @@ export default {
                     let coach = doc.data()
                     coach.id = doc.id
                     this.coaches.push(coach)
+                    this.loading = false
                 })
 
             })
