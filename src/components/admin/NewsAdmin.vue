@@ -6,8 +6,8 @@
             <!--            Add new article-->
             <v-dialog
                     v-model="newArticleDialog"
-                    persistent max-width="600px" t
-                    ransition="dialog-bottom-transition">
+                    persistent max-width="800px"
+                    transition="dialog-bottom-transition">
                 <template
                         v-slot:activator="{ on, attrs }">
                     <v-btn
@@ -21,7 +21,13 @@
                     </v-btn>
                 </template>
                 <v-card>
-                    <v-card-title>Nový článek</v-card-title>
+                    <v-card-title>
+                        Nový článek
+                        <v-spacer></v-spacer>
+                        <v-btn icon @click.stop="clearArticle(); newArticleDialog = false">
+                            <v-icon>close</v-icon>
+                        </v-btn>
+                    </v-card-title>
                     <v-card-text>
                         <v-container>
                             <v-form
@@ -38,10 +44,11 @@
                                 </v-row>
                                 <v-row>
                                     <v-col>
-                                        <v-textarea
-                                                name="content"
-                                                label="Obsah článku"
-                                                v-model="content"></v-textarea>
+                                        <tiptap-vuetify
+                                                v-model="content"
+                                                :extensions="extensions"
+                                                :card-props="{outlined: true}"
+                                        />
                                     </v-col>
                                 </v-row>
                             </v-form>
@@ -105,12 +112,12 @@
                         <v-card-title class="pt-0">{{ article.title | titleSnippet }}</v-card-title>
                         <v-card-subtitle>{{ formattedDateTime(article.timestamp) }}</v-card-subtitle>
                         <!--                        <v-card-subtitle>{{ getLatestUpdateDate(article.updatesTimestamp) }}</v-card-subtitle>-->
-                        <v-card-text>{{ article.content | snippet }}</v-card-text>
+                        <v-card-text>{{ article.content | stripHTML | snippet }}</v-card-text>
                         <v-card-actions>
                             <v-spacer></v-spacer>
                             <v-dialog
                                     v-model="articleDialog[article.id]"
-                                    persistent max-width="600px"
+                                    persistent max-width="800px"
                                     transition="dialog-bottom-transition">
                                 <template
                                         v-slot:activator="{ on, attrs }">
@@ -125,7 +132,14 @@
                                     </v-btn>
                                 </template>
                                 <v-card>
-                                    <v-card-title>Upravit článek</v-card-title>
+                                    <v-card-title>
+                                        Upravit článek
+                                        <v-spacer></v-spacer>
+                                        <v-btn icon
+                                               @click.stop="$set(articleDialog, article.id, false); clearArticle()">
+                                            <v-icon>close</v-icon>
+                                        </v-btn>
+                                    </v-card-title>
                                     <v-card-text>
                                         <v-container>
                                             <v-form>
@@ -143,18 +157,27 @@
                                                 </v-row>
                                                 <v-row>
                                                     <v-col>
-                                                        <v-textarea
-                                                                name="content"
-                                                                label="Obsah článku"
-                                                                v-model="content"></v-textarea>
+                                                        <tiptap-vuetify
+                                                                v-model="content"
+                                                                :extensions="extensions"
+                                                                :card-props="{outlined: true}"
+                                                        />
                                                     </v-col>
                                                 </v-row>
                                             </v-form>
                                             <v-sheet>
-                                                <p>Úpravy:</p>
-                                                <p
-                                                        v-for="update in article.updatesTimestamp">
-                                                    {{ formattedDateTime(update) }}</p>
+                                                <v-list dense>
+                                                    <v-subheader>Poslední úpravy:</v-subheader>
+                                                    <v-list-item-group>
+                                                        <v-list-item v-for="(update, i) in article.updatesTimestamp"
+                                                                     :key="i" inactive :ripple="false">
+                                                            <v-list-item-content>{{
+                                                                    formattedDateTime(update)
+                                                                }}
+                                                            </v-list-item-content>
+                                                        </v-list-item>
+                                                    </v-list-item-group>
+                                                </v-list>
                                             </v-sheet>
                                         </v-container>
                                     </v-card-text>
@@ -184,9 +207,25 @@
 import firebase from 'firebase/app'
 import db from "@/firebase/init"
 import slugify from "slugify"
+import {
+    TiptapVuetify,
+    Heading,
+    Bold,
+    Italic,
+    Strike,
+    Underline,
+    BulletList,
+    OrderedList,
+    ListItem,
+    Link,
+    Blockquote,
+    HorizontalRule,
+    History,
+} from 'tiptap-vuetify'
 
 export default {
     name: "NewsAdmin",
+    components: {TiptapVuetify},
 
     data() {
         return {
@@ -195,10 +234,28 @@ export default {
             articleDialog: {},
             confirmDeleteArticleDialog: {},
             title: null,
-            content: null,
+            content: ``,
             feedback: null,
             slug: null,
-            monthsCzech: ["ledna", "února", "března", "dubna", "května", "června", "července", "srpna", "září", "října", "listopadu", "prosince"]
+            extensions: [
+                History,
+                Bold,
+                Italic,
+                Underline,
+                Strike,
+                Link,
+                Blockquote,
+                ListItem,
+                BulletList,
+                OrderedList,
+                [Heading, {
+                    options: {
+                        levels: [1, 2, 3]
+                    }
+                }],
+                HorizontalRule,
+            ],
+            // starting editor's content
         }
     },
 

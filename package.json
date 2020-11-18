@@ -13,6 +13,7 @@
     "material-design-icons": "^3.0.1",
     "slugify": "^1.4.6",
     "swiper": "^6.3.5",
+    "tiptap-vuetify": "^2.24.0",
     "vue": "^2.6.11",
     "vue-awesome-swiper": "^4.1.1",
     "vue-owl-carousel": "^2.0.3",

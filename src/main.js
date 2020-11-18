@@ -2,15 +2,19 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import vuetify from './plugins/vuetify'
-import VueScrollactive from 'vue-scrollactive';
 import 'material-design-icons/iconfont/material-icons.css'
 // import Vuetify from "vuetify";
 import firebase from 'firebase/app'
 import 'firebase/auth'
+import {TiptapVuetifyPlugin} from 'tiptap-vuetify'
+import 'tiptap-vuetify/dist/main.css'
 
-Vue.use(VueScrollactive);
 Vue.config.productionTip = false;
 
+Vue.use(TiptapVuetifyPlugin, {
+    vuetify,
+    iconsGroup: 'mdi'
+})
 // Filters
 Vue.filter('snippet', function (value) {
     return value.length > 222 ? `${value.slice(0, 222)}...` : value
@@ -18,6 +22,10 @@ Vue.filter('snippet', function (value) {
 
 Vue.filter('titleSnippet', function (value) {
     return value.length > 42 ? `${value.slice(0, 42)}...` : value
+})
+
+Vue.filter('stripHTML', function (content) {
+    return content.replace(/<\/?[^>]+>/ig, " ");
 })
 
 //Mixins

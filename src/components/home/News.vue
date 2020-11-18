@@ -21,7 +21,7 @@
                                     formattedDate(article.timestamp)
                                 }}
                             </v-card-subtitle>
-                            <v-card-text class="pb-0">{{ article.content | snippet }}</v-card-text>
+                            <v-card-text class="pb-0">{{ article.content | stripHTML | snippet }}</v-card-text>
                             <v-card-actions>
                                 <v-btn text color="#DA0A16" :to="{name: 'Article', params: {article: article.slug
                                 }}">Celý článek

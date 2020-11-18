@@ -32,7 +32,7 @@
                     <div class="accent-line-column"></div>
                 </v-col>
                 <v-col cols="12" md="8" sm="9" xs="12">
-                    <div>{{ article.content }}</div>
+                    <div v-html="article.content"></div>
                 </v-col>
             </v-row>
         </v-container>

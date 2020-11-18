@@ -28,7 +28,7 @@
                     <h2 class="pb-4">
                         <router-link :to="'/articles/' + article.slug">{{ article.title }}</router-link>
                     </h2>
-                    <div>{{ article.content | snippet }}</div>
+                    <div>{{ article.content | stripHTML | snippet }}</div>
                     <br>
                     <router-link :to="'/articles/' + article.slug" class="link-to-the-article">Celý článek
                     </router-link>
