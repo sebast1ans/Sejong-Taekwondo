@@ -1,8 +1,7 @@
 <template>
-    <nav id="nav" @scroll="scrolledBeyond"
-         :class="{'nav-shrink': !mobileScreenOn || scrolled }">
+    <scrollactive id="nav" :duration="800" bezier-easing-value=".66,0,.33,1" :modify-url=false @scroll="scrolledBeyond"
+                  :class="{'nav-shrink': !mobileScreenOn || scrolled }">
         <v-container class="nav-elements">
-
             <div class="nav-mobile d-flex justify-space-around align-center">
                 <img src="@/assets/images/logos/whiteLogo.svg" alt="" class="nav-logo" height="85"
                      @click="$vuetify.goTo('#welcome')" @dblclick="$router.replace({name: 'Admin'})">
@@ -14,10 +13,10 @@
             <v-expand-transition>
                 <ul class="nav-items" v-show="expand">
                     <li v-if="!mobileScreenOn" v-for="navItem in navItems" class="nav-item" @click="expand = false">
-                        <a class="nav-link" @click="$vuetify.goTo(navItem.target)" v-html="navItem.text"></a>
+                        <a class="nav-link scrollactive-item" :href="navItem.target" v-html="navItem.text"></a>
                     </li>
                     <li v-if="mobileScreenOn" v-for="navItem in navItems" class="nav-item">
-                        <a class="nav-link" @click="$vuetify.goTo(navItem.target)" v-html="navItem.text"></a>
+                        <a class="nav-link scrollactive-item" :href="navItem.target" v-html="navItem.text"></a>
                     </li>
                     <li>
                         <ul class="nav-social d-flex">
@@ -42,7 +41,7 @@
                 </ul>
             </v-expand-transition>
         </v-container>
-    </nav>
+    </scrollactive>
 </template>
 
 <script>
@@ -96,8 +95,6 @@ export default {
             }
         }
     },
-
-
 }
 </script>
 

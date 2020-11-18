@@ -8,6 +8,7 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 import {TiptapVuetifyPlugin} from 'tiptap-vuetify'
 import 'tiptap-vuetify/dist/main.css'
+import VueScrollactive from 'vue-scrollactive'
 
 Vue.config.productionTip = false;
 
@@ -15,6 +16,8 @@ Vue.use(TiptapVuetifyPlugin, {
     vuetify,
     iconsGroup: 'mdi'
 })
+Vue.use(VueScrollactive)
+
 // Filters
 Vue.filter('snippet', function (value) {
     return value.length > 222 ? `${value.slice(0, 222)}...` : value
