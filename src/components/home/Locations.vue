@@ -34,10 +34,7 @@
                             <strong>Bus</strong> <br>
                             Krčský hřbitov (193, 148)</p>
                     </div>
-                    <div class="map">
-                        <iframe style="border:0"
-                                src="https://www.google.com/maps/embed/v1/place?q=sejong%20dojang&key=AIzaSyCfR22SLMLB8bq_gRgaAMOWNqVrDEDVlKc"
-                                allowfullscreen></iframe>
+                    <div class="map" id="mapHorackova">
                     </div>
                 </v-col>
                 <!--                <div class="maps-line"></div>-->
@@ -71,10 +68,7 @@
                         <p>Sídliště Libuš (165)<br>
                             Pavlíkova (197, 215)</p>
                     </div>
-                    <div class="map">
-                        <iframe style="border:0"
-                                src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJRbZwgmaRC0cRWzHX5AC9s_c&key=AIzaSyCfR22SLMLB8bq_gRgaAMOWNqVrDEDVlKc"
-                                allowfullscreen></iframe>
+                    <div class="map" id="mapSmolkova">
                     </div>
                 </v-col>
             </v-row>
@@ -83,8 +77,63 @@
 </template>
 
 <script>
+import {Loader} from "@googlemaps/js-api-loader"
+
 export default {
-    name: "Locations"
+    name: "Locations",
+    data: () => ({
+        coordinatesHorackova: {
+            lat: 50.0461,
+            lng: 14.4365
+        },
+        coordinatesSmolkova: {
+            lat: 50.0085,
+            lng: 14.4514
+        },
+        renderNewMap: new Loader({
+            apiKey: "AIzaSyCfR22SLMLB8bq_gRgaAMOWNqVrDEDVlKc",
+            version: "weekly",
+        })
+    }),
+
+    mounted() {
+        this.renderMap()
+    },
+
+    methods: {
+        renderMap() {
+            this.renderNewMap.load().then(() => {
+                const mapHorackova = new google.maps.Map(document.getElementById("mapHorackova"), {
+                    center: this.coordinatesHorackova,
+                    zoom: 16,
+                    fullscreenControl: false,
+                    zoomControl: true,
+                    streetViewControl: true
+                })
+
+                new google.maps.Marker({
+                    position: this.coordinatesHorackova,
+                    map: mapHorackova,
+                    title: "Sejong Taekwondo"
+                })
+
+                const mapSmolkova = new google.maps.Map(document.getElementById("mapSmolkova"), {
+                    center: this.coordinatesSmolkova,
+                    zoom: 16,
+                    fullscreenControl: false,
+                    zoomControl: true,
+                    streetViewControl: true
+                })
+
+                new google.maps.Marker({
+                    position: this.coordinatesSmolkova,
+                    map: mapSmolkova,
+                    title: "Sejong Taekwondo"
+                })
+            })
+
+        },
+    }
 }
 </script>
 
