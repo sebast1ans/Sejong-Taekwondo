@@ -15,9 +15,10 @@ $title-font: "Rajdhani";
   transition: $type $duration $timing;
 }
 
-body, html {
+body {
   //font-family: "Open Sans", sans-serif !important;
   overflow: hidden;
+  font-size: 1.1em;
 }
 
 section:nth-of-type(n + 2) {

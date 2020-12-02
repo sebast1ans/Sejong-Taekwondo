@@ -54,7 +54,7 @@
 
                     <v-card-title>{{ assistantCoach.name }}</v-card-title>
                     <v-card-subtitle>{{ assistantCoach.subtitle }}</v-card-subtitle>
-                    <v-card-text v-html="assistantCoach.cardText">
+                    <v-card-text class="text--primary" v-html="assistantCoach.cardText">
                     </v-card-text>
                     <v-card-actions>
                         <v-dialog v-model="coachDialog[assistantCoach.id]" scrollable width="600px">

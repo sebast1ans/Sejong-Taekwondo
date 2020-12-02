@@ -2,8 +2,8 @@
     <div>
         <Navigation/>
         <WelcomeCarousel/>
-<!--        <Announcement/>-->
-        <News/>
+        <Announcement/>
+        <!--        <News/>-->
         <WhoAreWe/>
         <References/>
         <Coaches/>

@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap");
-body, html {
+body {
   overflow: hidden;
+  font-size: 1.1em;
 }
 
 section:nth-of-type(n + 2) {
