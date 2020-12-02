@@ -78,6 +78,7 @@
 
 <script>
 import {Loader} from "@googlemaps/js-api-loader"
+import {key} from "@/GMapsAPIkey.js"
 
 export default {
     name: "Locations",
@@ -91,7 +92,7 @@ export default {
             lng: 14.4514
         },
         renderNewMap: new Loader({
-            apiKey: "AIzaSyCfR22SLMLB8bq_gRgaAMOWNqVrDEDVlKc",
+            apiKey: key,
             version: "weekly",
         })
     }),
