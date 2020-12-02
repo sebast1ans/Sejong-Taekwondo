@@ -1,0 +1,75 @@
+<template>
+    <section id="news">
+        <h1>Aktuality</h1>
+        <div class="accent-line"></div>
+        <v-container>
+
+            <v-sheet elevation="3" light>
+                <v-row>
+                    <v-col cols="12" xs="12" sm="6" md="3" v-for="(article) in articles.slice( -4).reverse()"
+                           :key="article.id">
+                        <v-card flat height="100%" class="d-flex flex-column">
+                            <v-tooltip top max-width="250" nudge-bottom="25" open-delay="700">
+                                <template v-slot:activator="{on, attrs}">
+                                    <span v-bind="attrs" v-on="on">
+                                        <v-card-title class="pb-0">{{ article.title | titleSnippet }}</v-card-title>
+                                    </span>
+                                </template>
+                                <span>{{ article.title }}</span>
+                            </v-tooltip>
+                            <v-card-subtitle class="pt-0 font-italic">{{
+                                    formattedDate(article.timestamp)
+                                }}
+                            </v-card-subtitle>
+                            <v-card-text class="pb-0">{{ article.content | stripHTML | snippet }}</v-card-text>
+                            <v-card-actions>
+                                <v-btn text color="#DA0A16" :to="{name: 'Article', params: {article: article.slug
+                                }}">Celý článek
+                                </v-btn>
+                            </v-card-actions>
+                        </v-card>
+                    </v-col>
+                </v-row>
+            </v-sheet>
+            <v-row>
+                <v-col class="d-flex">
+                    <v-spacer></v-spacer>
+                    <v-btn text color="#DA0A16" class="all-news" :to="{name: 'NewsView'}"><strong>Všechny
+                        aktuality</strong></v-btn>
+                    <v-spacer></v-spacer>
+                </v-col>
+            </v-row>
+
+        </v-container>
+    </section>
+</template>
+
+<script>
+import db from "@/firebase/init"
+
+export default {
+    name: "News",
+    data() {
+        return {
+            articles: [],
+            monthsCzech: ["ledna", "února", "března", "dubna", "května", "června", "července", "srpna", "září", "října", "listopadu", "prosince"]
+        }
+    },
+
+    created() {
+        db.collection("news").orderBy('timestamp').get()
+            .then(snapshot => {
+                snapshot.forEach(doc => {
+                    let article = doc.data()
+                    article.id = doc.id
+                    this.articles.push(article)
+                })
+            })
+    },
+
+}
+</script>
+
+<style scoped>
+
+</style>

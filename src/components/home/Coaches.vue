@@ -21,8 +21,12 @@
                                 <v-btn text color="#DA0A16" slot="activator" v-on="on">Více</v-btn>
                             </template>
                             <v-card>
-                                <v-card-title class="d-flex justify-space-between">
+                                <v-card-title>
+                                    <v-avatar class="mr-5" height="60px" width="60px">
+                                        <v-img :src="require(`@/assets/images/coaches/${coach.picture}`)"></v-img>
+                                    </v-avatar>
                                     {{ coach.name }}
+                                    <v-spacer></v-spacer>
                                     <v-btn icon @click.stop="$set(coachDialog, coach.id, false)">
                                         <v-icon>close</v-icon>
                                     </v-btn>
@@ -58,8 +62,12 @@
                                 <v-btn text color="#DA0A16" slot="activator" v-on="on">Více</v-btn>
                             </template>
                             <v-card>
-                                <v-card-title class="d-flex justify-space-between">
+                                <v-card-title>
+                                    <v-avatar class="mr-5" height="60px" width="60px">
+                                        <v-img :src="require(`@/assets/images/coaches/${assistantCoach.picture}`)"></v-img>
+                                    </v-avatar>
                                     {{ assistantCoach.name }}
+                                    <v-spacer></v-spacer>
                                     <v-btn icon @click.stop="$set(coachDialog, assistantCoach.id, false)">
                                         <v-icon>close</v-icon>
                                     </v-btn>
@@ -78,7 +86,7 @@
 </template>
 
 <script>
-import db from "../firebase/init";
+import db from "@/firebase/init";
 
 export default {
     name: "Coaches",
@@ -86,19 +94,19 @@ export default {
     data() {
         return {
             coaches: [],
-            coachDialog: {}
+            coachDialog: {},
+            loading: true
         }
     },
+
     computed: {
         mainCoaches() {
-            return this.coaches.filter(coach => {
-                return coach.role.match("main")
-            })
+            return this.coaches.filter(coach => coach.role.match("main")
+            )
         },
         assistantCoaches() {
-            return this.coaches.filter(coach => {
-                return coach.role.match("assistant")
-            })
+            return this.coaches.filter(coach => coach.role.match("assistant")
+            )
         }
     },
 
@@ -109,7 +117,9 @@ export default {
                     let coach = doc.data()
                     coach.id = doc.id
                     this.coaches.push(coach)
+                    this.loading = false
                 })
+
             })
     }
 }

@@ -189,5 +189,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@use '../assets/styles/home/what-is-taekwondo';
+@use '~@/assets/styles/home/what-is-taekwondo';
 </style>

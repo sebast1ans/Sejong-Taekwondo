@@ -1,6 +1,6 @@
 .DS_Store
 node_modules
-/dist
+dist
 
 # local env files
 .env.local
@@ -20,8 +20,13 @@ yarn-error.log*
 *.sln
 *.sw?
 
+#firebase
+firebase
 .firebase
 .firebaserc
 firebase.json
 firestore.indexes.json
 firestore.rules
+database.rules.json
+webpack.config.js
+

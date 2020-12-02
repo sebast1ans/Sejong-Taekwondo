@@ -11,7 +11,7 @@
                 animateOut="fadeOut">
             <div v-for="background in backgrounds" :class="'background ' + background"></div>
         </carousel>
-        <div class="welcome-logo">
+        <div id="welcome-logo">
 
         </div>
     </section>
@@ -24,28 +24,29 @@ import carousel from 'vue-owl-carousel'
 export default {
     name: 'WelcomeCarousel',
     components: {carousel},
+
     data: () => {
         return {
-            backgrounds: ["background1", "background2", "background3", "background4"]
+            backgrounds: ["background1", "background2", "background3", "background4"],
         }
     },
-    methods: {}
+
 }
 
-
+// TODO change carousel plugin to https://github.surmon.me/vue-awesome-swiper/
 </script>
 
 <style lang="scss" scoped>
-@use '../assets/styles/home/welcome-carousel.scss';
+@use '~@/assets/styles/home/welcome-carousel.scss';
 
 @for $i from 1 through 4 {
   .background#{$i} {
-    background: url("../assets/images/welcome-carousel/foto#{$i}.jpg") no-repeat center;
+    background: url("~@/assets/images/welcome-carousel/foto#{$i}.jpg") no-repeat center;
   }
 }
 
-.welcome-logo {
-  background: url("../assets/images/logos/whiteLogo.svg") no-repeat center;
+#welcome-logo {
+  background: url("~@/assets/images/logos/whiteLogo.svg") no-repeat center;
   background-size: 50%;
   height: 100vh;
   width: 100vw;
@@ -56,6 +57,11 @@ export default {
 
   @media only screen and (max-width: 900px) {
     background-size: 80%;
+  }
+
+  @media screen and (max-width: 700px) {
+    background: url("~@/assets/images/logos/sejongLogoMobile.svg") no-repeat center;
+    background-size: 50%;
   }
 }
 </style>

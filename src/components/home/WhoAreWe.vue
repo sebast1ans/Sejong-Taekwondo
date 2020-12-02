@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import db from "../firebase/init";
+import db from "@/firebase/init";
 
 export default {
     name: 'WhoAreWe',
@@ -64,5 +64,5 @@ export default {
 </script>
 
 <style lang="scss">
-@use '../assets/styles/home/who-are-we-carousel';
+@use '~@/assets/styles/home/who-are-we-carousel';
 </style>

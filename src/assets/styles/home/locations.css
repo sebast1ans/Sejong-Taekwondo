@@ -36,11 +36,6 @@
   grid-template-areas: "icon-map address map" "icon-clock time map" "icon-transport transport map";
   column-gap: 1%;
 }
-#locations .location h2 {
-  font-family: "Akrobat-Black", "Open Sans", sans-serif;
-  text-transform: uppercase;
-  font-size: 2.3em;
-}
 #locations .location .v-icon {
   font-size: 3.4em;
   color: #DA0A16;

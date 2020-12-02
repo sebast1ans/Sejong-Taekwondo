@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
-
-@font-face {
-  font-family: Akrobat-Black;
-  src: url("../assets/fonts/Akrobat/TTF/Akrobat-Black.ttf");
-}
+//@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap');
+//@font-face {
+//  font-family: Akrobat-Black;
+//  src: url("~@/assets/fonts/Akrobat/TTF/Akrobat-Black.ttf");
+//}
 
 $sejongRed: #DA0A16;
-$body-font-family: "Open Sans";
-$title-font: "Open Sans";
+$body-font-family: "Rajdhani";
+$title-font: "Rajdhani";
 
 @mixin stdTransition($type, $duration, $timing) {
   -webkit-transition: $type $duration $timing;
@@ -33,13 +33,17 @@ section:nth-of-type(n + 2) {
 }
 
 h1 {
-  font-family: "Akrobat-Black", "Open Sans", sans-serif;
   margin-top: 20px;
   margin-bottom: 30px;
   text-align: center;
   text-transform: uppercase;
   font-size: 42pt;
-  //font-weight: 800;
+  //font-weight: bold;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 2.3em;
 }
 
 a {
@@ -63,9 +67,24 @@ a {
   border-radius: 1px;
 }
 
+.accent-line-column {
+  height: 100%;
+  width: 4px;
+  background-color: $sejongRed;
+  border-radius: 1px;
+}
+
+.v-card__text, .v-card__title {
+  word-break: normal;
+}
+
 @media(max-width: 992px) {
   h1 {
     font-size: 40px;
+  }
+
+  h2 {
+    font-size: 2em !important;
   }
 
 }
