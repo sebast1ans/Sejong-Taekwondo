@@ -87,5 +87,5 @@ router.beforeEach((to, from, next) => {
     next()
 });
 
-console.log(Article)
+// console.log(Article)
 export default router

@@ -27,6 +27,8 @@
 }
 #locations .map {
   grid-area: map;
+  width: 100%;
+  height: 450px;
 }
 #locations .location {
   display: grid;
@@ -39,10 +41,6 @@
 #locations .location .v-icon {
   font-size: 3.4em;
   color: #DA0A16;
-}
-#locations .location iframe {
-  width: 100%;
-  height: 450px;
 }
 #locations .maps-line {
   width: 4px;

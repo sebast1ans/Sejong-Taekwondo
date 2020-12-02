@@ -5,7 +5,7 @@
         <Announcement/>
         <!--        <News/>-->
         <WhoAreWe/>
-        <References/>
+<!--        <References/>-->
         <Coaches/>
         <WhatIsTaekwondo/>
         <Locations/>
