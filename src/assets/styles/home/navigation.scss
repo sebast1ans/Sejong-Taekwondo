@@ -11,7 +11,7 @@
 
 nav {
   //font-family: $navbar-font-family;
-  font-size: .925em;
+  font-size: .95em;
   font-weight: 700;
   text-transform: uppercase;
   position: fixed;
@@ -106,7 +106,7 @@ nav {
 }
 
 .nav-shrink {
-  //border-bottom: 1px solid fade-out(white, .7);
+  border-bottom: 1px solid fade-out(white, .8);
   background: rgba(0, 0, 0, .78);
   backdrop-filter: blur(5px);
   padding: 0;
