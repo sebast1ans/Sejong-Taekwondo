@@ -49,7 +49,7 @@ a {
 }
 
 .width {
-  max-width: 60%;
+  max-width: 40%;
 
   @media only screen and (max-width: 600px) {
     max-width: 90%;

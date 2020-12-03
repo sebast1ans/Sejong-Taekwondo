@@ -6,7 +6,7 @@
             <v-row class="d-flex justify-center">
 
                 <v-card v-for="coach in mainCoaches.slice().reverse()" :key="coach.id" width="330"
-                        class="mt-8 mx-4 mb-4">
+                        class="mt-8 mx-4 mb-4" @click.stop="$set(coachDialog, coach.id, true)">
                     <v-sheet class="d-flex justify-space-around">
                         <v-img class="mt-n8 elevation-6" max-width="80%"
                                :src="require(`@/assets/images/coaches/${coach.picture}`)"></v-img>
@@ -43,7 +43,7 @@
             <v-row class="d-flex justify-center mt-4">
 
                 <v-card v-for="assistantCoach in assistantCoaches" :key="assistantCoach.id" max-width="260"
-                        class="my-12 mx-3">
+                        class="my-12 mx-3" @click.stop="$set(coachDialog, assistantCoach.id, true)">
                     <v-sheet class="d-flex justify-space-around">
                         <v-img
                                 class="mt-n8 elevation-6"
