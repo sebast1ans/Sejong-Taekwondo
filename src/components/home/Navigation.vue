@@ -52,7 +52,7 @@ export default {
     data() {
         return {
             navItems: [
-                // {target: '#news', text: 'Aktuality'},
+                {target: '#news', text: 'Aktuality'},
                 {target: '#who-are-we', text: 'Kdo jsme'},
                 {target: '#coaches', text: 'Trenéři'},
                 {target: '#what-is-taekwondo', text: 'O Taekwondo'},

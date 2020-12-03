@@ -3,7 +3,7 @@
         <Navigation/>
         <WelcomeCarousel/>
         <Announcement/>
-        <!--        <News/>-->
+        <News/>
         <WhoAreWe/>
 <!--        <References/>-->
         <Coaches/>

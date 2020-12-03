@@ -7,12 +7,13 @@
             <v-sheet elevation="3" light>
                 <v-row>
                     <v-col cols="12" xs="12" sm="6" md="3" v-for="(article) in articles.slice( -4).reverse()"
-                           :key="article.id">
+                           :key="article.id" class="pb-0">
                         <v-card flat height="100%" class="d-flex flex-column">
                             <v-tooltip top max-width="250" nudge-bottom="25" open-delay="700">
                                 <template v-slot:activator="{on, attrs}">
                                     <span v-bind="attrs" v-on="on">
-                                        <v-card-title class="pb-0">{{ article.title | titleSnippet }}</v-card-title>
+                                        <v-card-title class="pb-0" :to="{name: 'Article', params: {article: article.slug
+                                }}">{{ article.title | titleSnippet }}</v-card-title>
                                     </span>
                                 </template>
                                 <span>{{ article.title }}</span>
@@ -30,15 +31,24 @@
                         </v-card>
                     </v-col>
                 </v-row>
+                <v-row>
+                    <v-col class="d-flex pt-0 mx-3">
+                        <v-spacer></v-spacer>
+                        <v-btn small text color="#DA0A16" class="all-news" :to="{name: 'NewsView'}"><strong>Všechny
+                            aktuality
+                            <v-icon>sort</v-icon>
+                        </strong></v-btn>
+                    </v-col>
+                </v-row>
             </v-sheet>
-            <v-row>
-                <v-col class="d-flex">
-                    <v-spacer></v-spacer>
-                    <v-btn text color="#DA0A16" class="all-news" :to="{name: 'NewsView'}"><strong>Všechny
-                        aktuality</strong></v-btn>
-                    <v-spacer></v-spacer>
-                </v-col>
-            </v-row>
+            <!--            <v-row>-->
+            <!--                <v-col class="d-flex">-->
+            <!--                    <v-spacer></v-spacer>-->
+            <!--                    <v-btn text color="#DA0A16" class="all-news" :to="{name: 'NewsView'}"><strong>Všechny-->
+            <!--                        aktuality</strong></v-btn>-->
+            <!--                    <v-spacer></v-spacer>-->
+            <!--                </v-col>-->
+            <!--            </v-row>-->
 
         </v-container>
     </section>
