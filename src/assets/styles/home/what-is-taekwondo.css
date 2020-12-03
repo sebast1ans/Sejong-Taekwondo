@@ -21,11 +21,11 @@
   backdrop-filter: blur(1.5px);
 }
 #what-is-taekwondo .discipline .discipline-top-layer .discipline-text {
-  font-family: "Akrobat-Black", "Open Sans", sans-serif;
-  color: #ffffff;
-  font-size: 24pt;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    font-size: 24pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.7);
 }
 #what-is-taekwondo .discipline .discipline-top-layer:hover {
   opacity: 1;

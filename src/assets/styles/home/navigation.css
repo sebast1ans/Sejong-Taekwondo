@@ -1,15 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap");
 nav {
-    font-family: "Oswald";
-    font-size: 0.925em;
-    text-transform: uppercase;
-    position: fixed;
-    width: 100%;
-    z-index: 99;
-    padding: 1.1em 0 1.1em 0;
-    -webkit-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
-    -moz-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
-    transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
+  font-size: 0.925em;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  padding: 1.1em 0 1.1em 0;
+  -webkit-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
+  -moz-transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
+  transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, padding-bottom 0.3s;
 }
 nav ul {
   padding: 0 !important;
@@ -44,7 +43,6 @@ nav .nav-elements .nav-items .nav-item .nav-link {
   cursor: pointer;
   color: #fff;
   text-decoration: none;
-  font-weight: 500;
   padding: 0.5rem;
 }
 nav .nav-elements .nav-items .nav-item .nav-link:hover {
@@ -79,10 +77,10 @@ nav .nav-elements .nav-items .is-active {
 }
 
 .nav-shrink {
-    background: rgba(0, 0, 0, 0.78);
-    backdrop-filter: blur(5px);
-    padding: 0;
-    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.14), 0 1px 14px 0 rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(5px);
+  padding: 0;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 5px 8px 0 rgba(0, 0, 0, 0.14), 0 1px 14px 0 rgba(0, 0, 0, 0.12);
 }
 
 /*# sourceMappingURL=navigation.css.map */
