@@ -4,7 +4,8 @@
         <v-app-bar dark height="109" hide-on-scroll>
             <v-container>
                 <v-row class="align-center">
-                    <v-img src="@/assets/images/logos/whiteLogo.svg" max-width="230" max-height="90" contain></v-img>
+                    <v-img src="@/assets/images/logos/whiteLogo.svg" max-width="230" max-height="90" contain
+                           @click="$router.push({name: 'Home'})"></v-img>
                     <v-spacer></v-spacer>
                     <router-link :to="{name: 'Home'}">
                         <v-btn text>
