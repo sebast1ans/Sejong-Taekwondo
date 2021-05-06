@@ -4,8 +4,7 @@
             <v-container>
                 <v-row class="align-center">
                     <v-img src="@/assets/images/logos/whiteLogo.svg" max-width="230" max-height="90" contain
-                           @dblclick="$router.push({name: 'Admin'})"></v-img>
-
+                           @click="$router.push({name: 'Home'})" @dblclick="$router.push({name: 'Admin'})"></v-img>
                     <v-spacer></v-spacer>
                     <router-link :to="{name: 'Home'}">
                         <v-btn text>

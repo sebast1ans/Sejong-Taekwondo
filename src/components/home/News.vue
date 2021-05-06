@@ -12,8 +12,10 @@
                             <v-tooltip top max-width="250" nudge-bottom="25" open-delay="700">
                                 <template v-slot:activator="{on, attrs}">
                                     <span v-bind="attrs" v-on="on">
-                                        <v-card-title class="pb-0" :to="{name: 'Article', params: {article: article.slug
-                                }}">{{ article.title | titleSnippet }}</v-card-title>
+                                        <router-link class="article-title"
+                                                     :to="{name: 'Article', params: { article: article.slug }}">
+                                            <v-card-title class="pb-0">{{ article.title | titleSnippet }}</v-card-title>
+                                        </router-link>
                                     </span>
                                 </template>
                                 <span>{{ article.title }}</span>
@@ -24,8 +26,8 @@
                             </v-card-subtitle>
                             <v-card-text class="pb-0">{{ article.content | stripHTML | snippet }}</v-card-text>
                             <v-card-actions>
-                                <v-btn text color="#DA0A16" :to="{name: 'Article', params: {article: article.slug
-                                }}">Celý článek
+                                <v-btn text color="#DA0A16" :to="{name: 'Article', params: { article: article.slug }}">
+                                    Celý článek
                                 </v-btn>
                             </v-card-actions>
                         </v-card>
@@ -81,5 +83,8 @@ export default {
 </script>
 
 <style scoped>
-
+.article-title {
+    color: inherit !important;
+    text-decoration: none !important;
+}
 </style>

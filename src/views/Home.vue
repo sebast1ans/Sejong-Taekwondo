@@ -2,10 +2,10 @@
     <div>
         <Navigation/>
         <WelcomeCarousel/>
-        <Announcement/>
+<!--        <Announcement/>-->
         <News/>
         <WhoAreWe/>
-<!--        <References/>-->
+        <References/>
         <Coaches/>
         <WhatIsTaekwondo/>
         <Locations/>
