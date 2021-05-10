@@ -28,7 +28,7 @@
                 </v-col>
             </v-row>
             <v-row>
-                <v-col cols="12" md="2" sm="3" xs="12" class="pb-0 d-flex">
+                <v-col cols="12" md="2" sm="3" xs="12" class="pb-0 d-flex justify-end">
                     <p class="font-italic pr-3">{{ formattedDate(article.timestamp) }}</p>
                     <div class="accent-line-column"></div>
                 </v-col>

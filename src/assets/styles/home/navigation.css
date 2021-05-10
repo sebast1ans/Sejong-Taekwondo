@@ -40,10 +40,10 @@ nav .nav-elements .nav-items .nav-item:active, nav .nav-elements .nav-items .nav
   background-color: transparent;
 }
 nav .nav-elements .nav-items .nav-item .nav-link {
-  cursor: pointer;
-  color: #fff;
-  text-decoration: none;
-  padding: 0.5rem;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.4rem;
 }
 nav .nav-elements .nav-items .nav-item .nav-link:hover {
   color: #ccc;
