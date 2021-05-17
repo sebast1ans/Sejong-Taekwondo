@@ -75,6 +75,12 @@ export default {
 
         }
     }),
+    
+    computed: {
+        shuffledReviews: function () {
+            return this.reviews.sort(() => .5 - Math.random())
+        }
+    },
 
     created() {
         db.collection("references").get()
@@ -86,12 +92,6 @@ export default {
                 })
             })
     },
-
-    computed: {
-        shuffledReviews: function () {
-            return this.reviews.sort(() => .5 - Math.random())
-        }
-    }
 
 }
 </script>
